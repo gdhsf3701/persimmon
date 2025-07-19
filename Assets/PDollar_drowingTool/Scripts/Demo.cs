@@ -1,10 +1,10 @@
-﻿using UnityEngine;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using PDollarGestureRecognizer;
+using UnityEngine;
 
-namespace PDollarGestureRecognizer
+namespace PDollar_drowingTool.Scripts
 {
 	public class Demo : MonoBehaviour
 	{
@@ -115,7 +115,7 @@ namespace PDollarGestureRecognizer
 				recognized = true;
 
 				Gesture candidate = new Gesture(points.ToArray());
-				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+				Result gestureResult = QPointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
 				message = gestureResult.GestureClass + " " + gestureResult.Score;
 			}

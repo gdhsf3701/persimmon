@@ -1,16 +1,25 @@
 using System;
+using PDollarGestureRecognizer;
 
-namespace PDollarGestureRecognizer
+namespace PDollar_drowingTool.Scripts
 {
     /// <summary>
     /// Implements a gesture as a cloud of points (i.e., an unordered set of points).
-    /// Gestures are normalized with respect to scale, translated to origin, and resampled into a fixed number of 32 points.
+    /// For $P, gestures are normalized with respect to scale, translated to origin, and resampled into a fixed number of 32 points.
+    /// For $Q, a LUT is also computed.
     /// </summary>
     public class Gesture
     {
         public Point[] Points = null;            // gesture points (normalized)
-        public string Name;                 // gesture class
-        private const int SAMPLING_RESOLUTION = 32;
+        public Point[] PointsRaw = null;         // gesture points (not normalized, as captured from the input device)
+        public string Name = "";                 // gesture class
+        
+        private const int SAMPLING_RESOLUTION = 64;                             // default number of points on the gesture path
+        private const int MAX_INT_COORDINATES = 1024;                           // $Q only: each point has two additional x and y integer coordinates in the interval [0..MAX_INT_COORDINATES-1] used to operate the LUT table efficiently (O(1))
+        public static int LUT_SIZE = 64;                                        // $Q only: the default size of the lookup table is 64 x 64
+        public static int LUT_SCALE_FACTOR = MAX_INT_COORDINATES / LUT_SIZE;    // $Q only: scale factor to convert between integer x and y coordinates and the size of the LUT
+
+        public int[][] LUT = null;               // lookup table
 
         /// <summary>
         /// Constructs a gesture from an array of points
@@ -19,11 +28,31 @@ namespace PDollarGestureRecognizer
         public Gesture(Point[] points, string gestureName = "")
         {
             this.Name = gestureName;
-            
-            // normalizes the array of points with respect to scale, origin, and number of points
-            this.Points = Scale(points);
+
+            this.PointsRaw = new Point[points.Length];
+            for (int i = 0; i < points.Length; i++)
+                this.PointsRaw[i] = new Point(points[i].X, points[i].Y, points[i].StrokeID);
+
+            this.Normalize(true);
+        }
+
+        /// <summary>
+        /// Normalizes the gesture path. 
+        /// The $Q recognizer requires an extra normalization step, the computation of the LUT, 
+        /// which can be enabled with the computeLUT parameter.
+        /// </summary>
+        public void Normalize(bool computeLUT = true)
+        {
+            // standard $-family processing: resample, scale, and translate to origin
+            this.Points = Resample(PointsRaw, SAMPLING_RESOLUTION);
+            this.Points = Scale(Points);
             this.Points = TranslateTo(Points, Centroid(Points));
-            this.Points = Resample(Points, SAMPLING_RESOLUTION);
+            
+            if (computeLUT) // constructs a lookup table for fast lower bounding (used by $Q)
+            {
+                this.TransformCoordinatesToIntegers();
+                this.ConstructLUT();
+            }
         }
 
         #region gesture pre-processing steps: scale normalization, translation to origin, and resampling
@@ -142,6 +171,47 @@ namespace PDollarGestureRecognizer
                 if (points[i].StrokeID == points[i - 1].StrokeID)
                     length += Geometry.EuclideanDistance(points[i - 1], points[i]);
             return length;
+        }
+
+        /// <summary>
+        /// Scales point coordinates to the integer domain [0..MAXINT-1] x [0..MAXINT-1]
+        /// </summary>
+        private void TransformCoordinatesToIntegers()
+        {
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i].intX = (int)((Points[i].X + 1.0f) / 2.0f * (MAX_INT_COORDINATES - 1));
+                Points[i].intY = (int)((Points[i].Y + 1.0f) / 2.0f * (MAX_INT_COORDINATES - 1));
+            }
+        }
+
+        /// <summary>
+        /// Constructs a Lookup Table that maps grip points to the closest point from the gesture path
+        /// </summary>
+        private void ConstructLUT()
+        {
+            this.LUT = new int[LUT_SIZE][];
+            for (int i = 0; i < LUT_SIZE; i++)
+                LUT[i] = new int[LUT_SIZE];
+
+            for (int i = 0; i < LUT_SIZE; i++)
+                for (int j = 0; j < LUT_SIZE; j++)
+                {
+                    int minDistance = int.MaxValue;
+                    int indexMin = -1;
+                    for (int t = 0; t < Points.Length; t++)
+                    {
+                        int row = Points[t].intY / LUT_SCALE_FACTOR;
+                        int col = Points[t].intX / LUT_SCALE_FACTOR;
+                        int dist = (row - i) * (row - i) + (col - j) * (col - j);
+                        if (dist < minDistance)
+                        {
+                            minDistance = dist;
+                            indexMin = t;
+                        }
+                    }
+                    LUT[i][j] = indexMin;
+                }
         }
 
         #endregion

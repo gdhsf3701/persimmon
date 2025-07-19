@@ -1,31 +1,35 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using PDollar_drowingTool.Scripts;
 using PDollarGestureRecognizer;
 using UnityEngine;
 
-public class CheckImage : MonoBehaviour
+namespace CSI._01_Code
 {
+	public class CheckImage : MonoBehaviour
+	{
     
-    private List<Gesture> trainingSet = new List<Gesture>();
+		private List<Gesture> trainingSet = new List<Gesture>();
 
-    private List<Point> points = new List<Point>();
-    private int strokeId = -1;
+		private List<Point> points = new List<Point>();
+		private int strokeId = -1;
 
-    private Vector3 virtualKeyPosition = Vector2.zero;
-    private Rect drawArea;
+		private Vector3 virtualKeyPosition = Vector2.zero;
+		private Rect drawArea;
 
-    private int vertexCount = 0;
+		private int vertexCount = 0;
 
-    [SerializeField] private LineRenderer currentGestureLineRenderer;
+		[SerializeField] private LineRenderer currentGestureLineRenderer;
 	
-    private bool recognized;
+		private bool recognized;
     
-    void Start()
+		void Start()
 		{
-			drawArea = new Rect(0, 0, Screen.width - Screen.width / 3, Screen.height);
+			drawArea = new Rect(0, 0, Screen.width, Screen.height);
 
 			//Load pre-made gestures
-			TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
+			TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>($"GestureSet/10-stylus-MEDIUM/");
 			foreach (TextAsset gestureXml in gesturesXml)
 				trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
 
@@ -63,7 +67,10 @@ public class CheckImage : MonoBehaviour
 
 					currentGestureLineRenderer.positionCount = ++vertexCount;
 					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
+					Gesture candidate = new Gesture(points.ToArray());
+					Result gestureResult = QPointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
+					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 				}
 			}
 
@@ -73,10 +80,18 @@ public class CheckImage : MonoBehaviour
 			{
 				recognized = true;
 				Gesture candidate = new Gesture(points.ToArray());
-				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+				Result gestureResult = QPointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
 				Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 			}
 		}
+
+		private void SaveData(string newGestureName = "")
+		{
+			string fileName = String.Format("{0}/{1}-{2}.xml", Application.persistentDataPath, newGestureName, DateTime.Now.ToFileTime());
+
+			GestureIO.WriteGesture(points.ToArray(), newGestureName, fileName);
+		}
     
+	}
 }

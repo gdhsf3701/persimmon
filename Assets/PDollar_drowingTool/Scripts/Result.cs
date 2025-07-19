@@ -1,4 +1,4 @@
-﻿namespace PDollarGestureRecognizer {
+﻿namespace PDollar_drowingTool.Scripts {
 
 	public struct Result {
 
