@@ -68,7 +68,7 @@ namespace CSI._01_Code
 					currentGestureLineRenderer.positionCount = ++vertexCount;
 					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
 					Gesture candidate = new Gesture(points.ToArray());
-					Result gestureResult = QPointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
 					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 				}
@@ -80,7 +80,7 @@ namespace CSI._01_Code
 			{
 				recognized = true;
 				Gesture candidate = new Gesture(points.ToArray());
-				Result gestureResult = QPointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
 				Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 			}
