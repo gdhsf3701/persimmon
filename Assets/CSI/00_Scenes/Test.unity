@@ -324,6 +324,7 @@ MonoBehaviour:
   upperCheck: {fileID: 11400000, guid: 10a292c38640b64428408f7b3b07ee13, type: 2}
   star: {fileID: 11400000, guid: 0a5415c7dc7e4884492545f448bab7bc, type: 2}
   circle: {fileID: 11400000, guid: 7625aa08068503145a2df7f4c26cc018, type: 2}
+  eleck: {fileID: 11400000, guid: a5af83b6dbd060e4ea7a1debb6b7b0dd, type: 2}
 --- !u!4 &827886970
 Transform:
   m_ObjectHideFlags: 0

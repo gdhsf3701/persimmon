@@ -36,6 +36,7 @@ namespace CSI._01_Code
 		[SerializeField] private ShapeSO upperCheck;
 		[SerializeField] private ShapeSO star;
 		[SerializeField] private ShapeSO circle;
+		[SerializeField] private ShapeSO eleck;
 		
     
 		void Start()
@@ -87,7 +88,10 @@ namespace CSI._01_Code
 					Gesture candidate = new Gesture(points.ToArray());
 					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 					ShapeSO shapType = GetShapeSo(StringToShapType(gestureResult.GestureClass));
-					SetTrailColor(shapType.Color, drowingTime/30);
+					if(gestureResult.Score > 0.7f)
+						SetTrailColor(shapType.Color, drowingTime/30);
+					else
+						SetTrailColor(Color.white, drowingTime/30);
 				}
 				
 			}
@@ -112,12 +116,13 @@ namespace CSI._01_Code
 				Gesture candidate = new Gesture(points.ToArray());
 				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
-				Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 				if (gestureResult.Score > 0.7f)
 				{
+					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 					DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
 				}
-				
+
+				ResetDraw();
 			}
 		}
 
@@ -161,6 +166,9 @@ namespace CSI._01_Code
 				case "UperCheck":
 					shapType = ShapType.UpperCheck;
 					break;
+				case "Eleck":
+					shapType = ShapType.Eleck;
+					break;
 			}
 
 			return shapType;
@@ -188,6 +196,9 @@ namespace CSI._01_Code
 					break;
 				case ShapType.Circle:
 					shape = circle;
+					break;
+				case ShapType.Eleck:
+					shape = eleck;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException(nameof(shapType), shapType, null);
