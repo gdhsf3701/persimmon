@@ -80,6 +80,18 @@ namespace moon._01.Script.Manager
             SpawnCount--;
         }
 
+        public Enemy SpawnDeputyEnemy(GameObject prefab, int i = -1)
+        {
+            int pos;
+            if (i == -1)
+                pos = Random.Range(0, many);
+            else
+                pos = i;
+            Enemy obj = Instantiate(prefab , IntToPos(pos) ,Quaternion.identity).GetComponent<Enemy>();
+            obj.Spawned();
+            return obj;
+        }
+
         private Vector3 IntToPos(int value)
         {
             float angle = value * Mathf.PI * 2 / many;

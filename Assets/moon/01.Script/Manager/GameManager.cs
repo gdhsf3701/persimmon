@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using moon._01.Script.SO;
@@ -17,6 +18,8 @@ namespace moon._01.Script.Manager
         public SerializedDictionary<int, WaveDataListSO> waveEnemy {get; private set;}
         public EnemySpawnManager SpawnManager { get; private set; }
         public ScoreManager ScoreManager { get; private set; }
+
+        public Action OnGameEndEvent;
 
         private void Awake()
         {
@@ -49,8 +52,13 @@ namespace moon._01.Script.Manager
 
         public (int,float,List<GameObject>) GetWaveData()
         {
-            WaveDataListSO waveDataList = waveEnemy[Wave];
-            return (waveDataList.EnemySpawnCount, waveDataList.SpawnTime ,waveDataList.EnemyPrefabs);
+            if (waveEnemy.ContainsKey(Wave))
+            {
+                WaveDataListSO waveDataList = waveEnemy[Wave];
+                return (waveDataList.EnemySpawnCount, waveDataList.SpawnTime ,waveDataList.EnemyPrefabs);
+            }
+            OnGameEndEvent?.Invoke();
+            return (0, 0, new List<GameObject>());
         }
     }
 }
