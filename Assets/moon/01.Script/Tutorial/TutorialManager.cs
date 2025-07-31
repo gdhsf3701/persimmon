@@ -90,7 +90,6 @@ namespace moon._01.Script.Tutorial
             }
 
             await Task.Delay((int)(obj.TextDelayTime * 1000));
-            text.text = "";
         }
 
         private async Task HandleEnemy(TutorialObj obj)
