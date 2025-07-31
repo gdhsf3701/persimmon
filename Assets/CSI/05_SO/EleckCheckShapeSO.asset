@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf5d4b9f80a0fc24eb41c2035d714e9a, type: 3}
-  m_Name: HLineShapeSO
+  m_Name: EleckCheckShapeSO
   m_EditorClassIdentifier: 
-  shape: 1
-  color: {r: 0.026666641, g: 0, b: 1, a: 0}
+  shape: 6
+  color: {r: 1, g: 0.70388687, b: 0, a: 0}

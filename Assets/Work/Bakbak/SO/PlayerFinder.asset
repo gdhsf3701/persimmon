@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf5d4b9f80a0fc24eb41c2035d714e9a, type: 3}
-  m_Name: HLineShapeSO
+  m_Script: {fileID: 11500000, guid: bddca95504da5704cbb2ac09ca3ce2e2, type: 3}
+  m_Name: PlayerFinder
   m_EditorClassIdentifier: 
-  shape: 1
-  color: {r: 0.026666641, g: 0, b: 1, a: 0}
+  _keyType:
+    typeName: 
+  _findAll: 0

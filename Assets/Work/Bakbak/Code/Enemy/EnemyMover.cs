@@ -21,4 +21,9 @@ public class EnemyMover : MonoBehaviour, IEntityCompo
         owner = enemy;
         SetTargetPos(new Vector2(0, 0));
     }
+
+    public void Desolve()
+    {
+
+    }
 }
