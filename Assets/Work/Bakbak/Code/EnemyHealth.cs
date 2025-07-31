@@ -25,6 +25,6 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
 
     public void Initialize(Enemy enemy)
     {
-        enemy.OnHit += ApplyDamage;
+        owner = enemy;
     }
 }

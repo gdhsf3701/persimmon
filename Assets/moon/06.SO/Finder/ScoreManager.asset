@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bddca95504da5704cbb2ac09ca3ce2e2, type: 3}
-  m_Name: SpawnManagerFinder
+  m_Name: ScoreManager
   m_EditorClassIdentifier: 
   _keyType:
-    typeName: moon._01.Script.Manager.EnemySpawnManager, Assembly-CSharp, Version=0.0.0.0,
+    typeName: moon._01.Script.Manager.ScoreManager, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _findAll: 0
