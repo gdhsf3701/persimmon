@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace moon._01.Script.Manager
@@ -13,16 +14,33 @@ namespace moon._01.Script.Manager
         [SerializeField] private Slider sfxSlider;
 
         [SerializeField] private GameObject settingPanel;
-        
+        [SerializeField] private GameObject mainPanel;
+
+
         private void Start()
         {
             LoadVolume();
-            settingPanel.SetActive(false);
+            ChangeOpened(false);
         }
 
-        public void ChangeOpened()
+        public void StartGame()
         {
-            settingPanel.SetActive(!settingPanel.activeSelf);
+            const string gameSceneName = "GameScene";
+            SceneManager.LoadScene(gameSceneName);
+        }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
+
+        public void ChangeOpened(bool active)
+        {
+            if (settingPanel != null)
+                settingPanel.SetActive(active);
+
+            if (mainPanel != null)
+                mainPanel.SetActive(!active);
         }
         
         public void SetMasterVolume()
@@ -31,7 +49,7 @@ namespace moon._01.Script.Manager
             myMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
             PlayerPrefs.SetFloat("Master", volume);
         }
-        public void SetMusicVolume()
+        public void SetBgmVolume()
         {
             float volume = bgmSlider.value;
             myMixer.SetFloat("BGM", Mathf.Log10(volume)*20);
@@ -50,7 +68,7 @@ namespace moon._01.Script.Manager
             sfxSlider.value = PlayerPrefs.GetFloat("SFX" , 1f);
             masterSlider.value = PlayerPrefs.GetFloat("Master" , 1f);
 
-            SetMusicVolume();
+            SetBgmVolume();
             SetSfxVolume();
             SetMasterVolume();
         }
