@@ -163,6 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6ed8ea31504e64c90549a58fd3af70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnMany: 10
+  spawnMultiplyToWave: 1.1
   spawnManagerFinder: {fileID: 11400000, guid: 9214dcdf16bcfdd44bdce63dc4023d8a, type: 2}
 --- !u!1 &345694670
 GameObject:

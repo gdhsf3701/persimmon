@@ -12,26 +12,29 @@ namespace moon._01.Script
         [SerializeField] private float spawnTime;
         private float _timeMultiply;
         private float _timer = 0;
+        public int SpawnCount { get; private set; } = 0;
 
-        public void ResetSpawnManager()
+        public void ResetSpawnManager(int spawnCount = 1)
         {
             _timer = 0;
             _timeMultiply = 1;
+            SpawnCount = spawnCount;
         }
 
-        private void Awake()
+        public void SetSpawnCount(int spawnCount)
         {
-            ResetSpawnManager();
+            SpawnCount = spawnCount;
         }
 
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (_timer >= spawnTime * _timeMultiply)
+            if (SpawnCount > 0 && _timer >= spawnTime * _timeMultiply)
             {
                 _timer = 0;
                 int rand = Random.Range(0, many);
                 Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity);
+                SpawnCount--;
             }
         }
 
