@@ -95,6 +95,10 @@ namespace CSI._01_Code
 					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 					ShapeSO shapType = GetShapeSo(StringToShapType(gestureResult.GestureClass));
 					Vector3 pos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
+					if (particleSystem.isPlaying == false)
+					{
+						particleSystem.Play();
+					}
 					particleSystem.transform.position = new Vector3(pos.x, pos.y, 0);
 					if (gestureResult.Score > 0.7f)
 					{
