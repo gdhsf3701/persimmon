@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace moon._01.Script
+namespace moon._01.Script.Manager
 {
     public class EnemySpawnManager : MonoBehaviour
     {
@@ -14,8 +15,11 @@ namespace moon._01.Script
         private float _timer = 0;
         private int _enemyCount = 0;
 
+        public event Action<int> OnScoreChangeEvent;
         public event Action NextWaveEvent;
         public int SpawnCount { get; private set; } = 0;
+
+        private List<Enemy> _actionEnemy = new List<Enemy>();
 
         public void ResetSpawnManager(int spawnCount = 1)
         {
@@ -28,8 +32,22 @@ namespace moon._01.Script
         private void EnemyDie(Enemy enemy)
         {
             _enemyCount--;
-            NextWaveEvent?.Invoke();
+            OnScoreChangeEvent?.Invoke(10);
+            if (_enemyCount <= 0)
+            {
+                _enemyCount = 0;
+                NextWaveEvent?.Invoke();
+            }
+            _actionEnemy.Remove(enemy);
             enemy.OnDeadEvent -= EnemyDie;
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var enemy in _actionEnemy)
+            {
+                enemy.OnDeadEvent -= EnemyDie;
+            }
         }
 
         public void SetSpawnCount(int spawnCount)
@@ -47,6 +65,7 @@ namespace moon._01.Script
                 Enemy obj = Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity).GetComponent<Enemy>();
                 obj.Spawned();
                 _enemyCount++;
+                _actionEnemy.Add(obj);
                 obj.OnDeadEvent += EnemyDie;
                 SpawnCount--;
             }

@@ -1,39 +1,43 @@
-using System;
 using Plugins.ScriptFinder.RunTime.Finder;
 using UnityEngine;
 
-namespace moon._01.Script
+namespace moon._01.Script.Manager
 {
-    public class WaveManager : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
         public int Wave { get; private set; } = 1;
         [SerializeField] private int spawnMany;
         [SerializeField] private float spawnMultiplyToWave;
         [SerializeField] private ScriptFinderSO spawnManagerFinder;
-        private EnemySpawnManager _spawnManager;
+        [SerializeField] private ScriptFinderSO scoreManagerFinder;
+        public EnemySpawnManager SpawnManager { get; private set; }
+        public ScoreManager ScoreManager { get; private set; }
 
         private void Awake()
         {
-            _spawnManager = spawnManagerFinder.GetTarget<EnemySpawnManager>();
-            _spawnManager.NextWaveEvent += NextWave;
+            SpawnManager = spawnManagerFinder.GetTarget<EnemySpawnManager>();
+            ScoreManager = scoreManagerFinder.GetTarget<ScoreManager>();
+            ScoreManager.Initialize(this);
+            SpawnManager.NextWaveEvent += NextWave;
             ResetWave();
         }
 
         private void OnDestroy()
         {
-            _spawnManager.NextWaveEvent -= NextWave;
+            SpawnManager.NextWaveEvent -= NextWave;
         }
 
         public void NextWave()
         {
             Wave++;
-            _spawnManager.SetSpawnCount(GetWaveToSpawnCount());
+            SpawnManager.SetSpawnCount(GetWaveToSpawnCount());
         }
 
         public void ResetWave()
         {
             Wave = 1;
-            _spawnManager.ResetSpawnManager(GetWaveToSpawnCount());
+            SpawnManager.ResetSpawnManager(GetWaveToSpawnCount());
+            ScoreManager.ResetScoreManager();
         }
 
         public int GetWaveToSpawnCount()
