@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EleckCheckShapeSO
   m_EditorClassIdentifier: 
   shape: 6
-  color: {r: 1, g: 0.70388687, b: 0, a: 0}
+  color: {r: 1, g: 0.70388687, b: 0, a: 1}

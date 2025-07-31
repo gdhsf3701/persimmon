@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UpperCheckShapeSO
   m_EditorClassIdentifier: 
   shape: 3
-  color: {r: 0.11273074, g: 1, b: 0, a: 0}
+  color: {r: 0.11273074, g: 1, b: 0, a: 1}

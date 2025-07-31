@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HLineShapeSO
   m_EditorClassIdentifier: 
   shape: 1
-  color: {r: 0.026666641, g: 0, b: 1, a: 0}
+  color: {r: 0.026666641, g: 0, b: 1, a: 1}
