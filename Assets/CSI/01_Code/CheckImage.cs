@@ -51,7 +51,7 @@ namespace CSI._01_Code
 				trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
 		}
 
-		void Update()
+		void FixedUpdate()
 		{
 			if (Input.GetMouseButton(0))
 			{
@@ -83,16 +83,15 @@ namespace CSI._01_Code
 					points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
 					currentGestureLineRenderer.positionCount = ++vertexCount;
 					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
-					if (points.Count <= 0 || drowingTime < 5) return;
-					
+					if (vertexCount <= 0 || drowingTime < 5) return;
+					Gesture candidate = new Gesture(points.ToArray());
+					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+					ShapeSO shapType = GetShapeSo(StringToShapType(gestureResult.GestureClass));
+					SetTrailColor(shapType.Color, drowingTime/30);
 				}
 				if (Input.GetMouseButtonUp(0))
 				{
-					if (points.Count <= 0 || drowingTime < 5)
-					{
-						ResetDraw();
-						return;
-					}
+
 					recognized = true;
 					Gesture candidate = new Gesture(points.ToArray());
 					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
@@ -102,17 +101,12 @@ namespace CSI._01_Code
 					{
 						DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
 					}
+					ResetDraw();
 				}
 			}
 			else
 			{
-				if (points.Count <= 0|| drowingTime < 5)
-				{
-					ResetDraw();
-					return;
-				}
-						
-
+				ResetDraw();
 			}
 			
 		}
@@ -123,7 +117,6 @@ namespace CSI._01_Code
 			strokeId = -1;
 			points.Clear();
 			currentGestureLineRenderer.positionCount = 0;
-			SetTrailColor(Color.yellow);
 			vertexCount = 0;
 			drowingTime = 0;
 		}
@@ -162,23 +155,54 @@ namespace CSI._01_Code
 
 			return shapType;
 		}
-		private void SetTrailColor(Color color)
+
+		private ShapeSO GetShapeSo(ShapType shapType)
 		{
-			Gradient gradient = new Gradient();
-			gradient.colorKeys = new GradientColorKey[2];
-			gradient.colorKeys[0].color = color;
-			gradient.colorKeys[0].time = 0;
-			gradient.colorKeys[1].color = color;
-			gradient.colorKeys[1].time = 1;
-			gradient.alphaKeys = new GradientAlphaKey[2];
-			gradient.alphaKeys[0].alpha = 1;
-			gradient.alphaKeys[0].time = 0;
-			gradient.alphaKeys[1].alpha = 1;
-			gradient.alphaKeys[1].time = 1;
-			gradient.SetKeys(gradient.colorKeys, gradient.alphaKeys);
-			currentGestureLineRenderer.colorGradient = gradient;
+			ShapeSO shape = null;
+			switch (shapType)
+			{
+				case ShapType.Line:
+					shape = line;
+					break;
+				case ShapType.HLine:
+					shape = hLine;
+					break;
+				case ShapType.UnderCheck:
+					shape = underCheck;
+					break;
+				case ShapType.UpperCheck:
+					shape = upperCheck;
+					break;
+				case ShapType.Star:
+					shape = star;
+					break;
+				case ShapType.Circle:
+					shape = circle;
+					break;
+				default:
+					throw new ArgumentOutOfRangeException(nameof(shapType), shapType, null);
+			}
+
+			return shape;
+		}
+		private void SetTrailColor(Color color,float alpha = 1)
+		{
+			Debug.Log(alpha);
+			alpha = Mathf.Clamp(alpha, 0.15f, 1);
 			currentGestureLineRenderer.startColor = color;
 			currentGestureLineRenderer.endColor = color;
+			Gradient gradient = new Gradient();
+			gradient.SetKeys(
+				new GradientColorKey[] {
+					new GradientColorKey(color, 0.0f),
+					new GradientColorKey(color, 1.0f)
+				},
+				new GradientAlphaKey[] {
+					new GradientAlphaKey(alpha, 0.0f),
+					new GradientAlphaKey(alpha, 1.0f)
+				}
+			);
+			currentGestureLineRenderer.colorGradient = gradient;
 		}
 	}
 }
