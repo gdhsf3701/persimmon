@@ -7,8 +7,8 @@ public class Enemy : MonoBehaviour
 {
     public event Action OnDespawn;
 
-    public event Action<ShapeSO> OnHit;
-    public event Action<ShapeSO> OnDeadEvent;
+    public event Action OnHit;
+    public event Action<Enemy> OnDeadEvent;
     public void Spawned()
     {
         SetCompo();
@@ -29,6 +29,6 @@ public class Enemy : MonoBehaviour
 
     public void OnDead()
     {
-
+        OnDeadEvent?.Invoke(this);
     }
 }
