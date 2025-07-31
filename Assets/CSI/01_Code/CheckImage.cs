@@ -89,26 +89,36 @@ namespace CSI._01_Code
 					ShapeSO shapType = GetShapeSo(StringToShapType(gestureResult.GestureClass));
 					SetTrailColor(shapType.Color, drowingTime/30);
 				}
-				if (Input.GetMouseButtonUp(0))
-				{
-
-					recognized = true;
-					Gesture candidate = new Gesture(points.ToArray());
-					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
-
-					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
-					if (gestureResult.Score > 0.7f)
-					{
-						DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
-					}
-					ResetDraw();
-				}
+				
 			}
 			else
 			{
 				ResetDraw();
 			}
-			
+
+		}
+
+		private void Update()
+		{
+			if (Input.GetMouseButtonUp(0))
+			{
+				if (vertexCount <= 0 || drowingTime < 5)
+				{
+					ResetDraw();
+					return;
+				}
+				Debug.Log("MouseUp");
+				recognized = true;
+				Gesture candidate = new Gesture(points.ToArray());
+				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+
+				Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
+				if (gestureResult.Score > 0.7f)
+				{
+					DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
+				}
+				
+			}
 		}
 
 		private void ResetDraw()
@@ -187,7 +197,6 @@ namespace CSI._01_Code
 		}
 		private void SetTrailColor(Color color,float alpha = 1)
 		{
-			Debug.Log(alpha);
 			alpha = Mathf.Clamp(alpha, 0.15f, 1);
 			currentGestureLineRenderer.startColor = color;
 			currentGestureLineRenderer.endColor = color;
