@@ -1,15 +1,20 @@
+using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
+using moon._01.Script.SO;
 using Plugins.ScriptFinder.RunTime.Finder;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace moon._01.Script.Manager
 {
     public class GameManager : MonoBehaviour
     {
         public int Wave { get; private set; } = 1;
-        [SerializeField] private int spawnMany;
-        [SerializeField] private float spawnMultiplyToWave;
         [SerializeField] private ScriptFinderSO spawnManagerFinder;
         [SerializeField] private ScriptFinderSO scoreManagerFinder;
+
+        [field: SerializeField ,SerializedDictionary("Wave", "EnemyList")]
+        public SerializedDictionary<int, WaveDataListSO> waveEnemy {get; private set;}
         public EnemySpawnManager SpawnManager { get; private set; }
         public ScoreManager ScoreManager { get; private set; }
 
@@ -30,20 +35,22 @@ namespace moon._01.Script.Manager
         public void NextWave()
         {
             Wave++;
-            SpawnManager.SetSpawnCount(GetWaveToSpawnCount());
+            var (spawnCount,spawnTime, enemyPrefabs) = GetWaveData();
+            SpawnManager.SetNextWave(spawnCount,spawnTime,enemyPrefabs);
         }
 
         public void ResetWave()
         {
             Wave = 1;
-            SpawnManager.ResetSpawnManager(GetWaveToSpawnCount());
+            var (spawnCount,spawnTime, enemyPrefabs) = GetWaveData();
+            SpawnManager.ResetSpawnManager(spawnCount,spawnTime,enemyPrefabs);
             ScoreManager.ResetScoreManager();
         }
 
-        public int GetWaveToSpawnCount()
+        public (int,float,List<GameObject>) GetWaveData()
         {
-            int value = Mathf.FloorToInt(spawnMany * ((spawnMultiplyToWave - 1) * (Wave - 1) + 1));
-            return value;
+            WaveDataListSO waveDataList = waveEnemy[Wave];
+            return (waveDataList.EnemySpawnCount, waveDataList.SpawnTime ,waveDataList.EnemyPrefabs);
         }
     }
 }
