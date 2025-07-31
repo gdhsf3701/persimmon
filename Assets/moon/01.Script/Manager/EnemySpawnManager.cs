@@ -61,14 +61,19 @@ namespace moon._01.Script.Manager
             if (SpawnCount > 0 && _timer >= spawnTime * _timeMultiply)
             {
                 _timer = 0;
-                int rand = Random.Range(0, many);
-                Enemy obj = Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity).GetComponent<Enemy>();
-                obj.Spawned();
-                _enemyCount++;
-                _actionEnemy.Add(obj);
-                obj.OnDeadEvent += EnemyDie;
-                SpawnCount--;
+                SpawnEnemy();
             }
+        }
+
+        private void SpawnEnemy()
+        {
+            int rand = Random.Range(0, many);
+            Enemy obj = Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity).GetComponent<Enemy>();
+            obj.Spawned();
+            _enemyCount++;
+            _actionEnemy.Add(obj);
+            obj.OnDeadEvent += EnemyDie;
+            SpawnCount--;
         }
 
         private Vector3 IntToPos(int value)
