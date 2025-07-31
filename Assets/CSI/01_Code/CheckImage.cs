@@ -56,13 +56,13 @@ namespace CSI._01_Code
 				{
 					if (recognized)
 					{
-						SetTrailColor(Color.yellow);
-						drowingTime = 0;
 						recognized = false;
 						strokeId = -1;
 						points.Clear();
 						currentGestureLineRenderer.positionCount = 0;
+						SetTrailColor(Color.yellow);
 						vertexCount = 0;
+						drowingTime = 0;
 					}
 					
 
