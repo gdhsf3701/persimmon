@@ -10,20 +10,32 @@ namespace moon._01.Script
         [SerializeField] private float distance;
         [SerializeField] private int many;
         [SerializeField] private float spawnTime;
+        private float _timeMultiply;
         private float _timer = 0;
+
+        public void ResetSpawnManager()
+        {
+            _timer = 0;
+            _timeMultiply = 1;
+        }
+
+        private void Awake()
+        {
+            ResetSpawnManager();
+        }
 
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (_timer >= spawnTime)
+            if (_timer >= spawnTime * _timeMultiply)
             {
                 _timer = 0;
                 int rand = Random.Range(0, many);
-                Instantiate(enemyPrefab , GetPosToInt(rand) ,Quaternion.identity);
+                Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity);
             }
         }
 
-        private Vector3 GetPosToInt(int value)
+        private Vector3 IntToPos(int value)
         {
             float angle = value * Mathf.PI * 2 / many;
             Vector3 pos = transform.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * distance;
