@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1Wave2Enemy
   m_EditorClassIdentifier: 
   <EnemySpawnCount>k__BackingField: 7
-  <SpawnTime>k__BackingField: 0.75
+  <SpawnTime>k__BackingField: 1.5
   <EnemyPrefabs>k__BackingField:
   - {fileID: 2076138663844820135, guid: 858fa40fe502d7f439d9bc99bdbc8c1b, type: 3}
   - {fileID: 7524940628728824255, guid: f8016a198aeb2d84ea54904848952289, type: 3}
