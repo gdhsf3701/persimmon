@@ -50,11 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5485821215156018390, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: m_Name
-      value: System Variant
+      value: Stage1System
       objectReference: {fileID: 0}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: <waveEnemy>k__BackingField._serializedList.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: <waveEnemy>k__BackingField._serializedList.Array.data[0].Key
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: <waveEnemy>k__BackingField._serializedList.Array.data[1].Key
@@ -68,6 +72,10 @@ PrefabInstance:
       propertyPath: <waveEnemy>k__BackingField._serializedList.Array.data[3].Key
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: <waveEnemy>k__BackingField._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 3c2427d405d67934ab645d37ce3f5f77, type: 2}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: <waveEnemy>k__BackingField._serializedList.Array.data[1].Value
       value: 
