@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 
     public event Action OnHit;
     public event Action<Enemy> OnDeadEvent;
+
+    [ContextMenu("spawn")]
     public void Spawned()
     {
         SetCompo();
