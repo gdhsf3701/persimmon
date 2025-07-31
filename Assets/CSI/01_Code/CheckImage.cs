@@ -4,6 +4,8 @@ using System.IO;
 using PDollar_drowingTool.Scripts;
 using PDollarGestureRecognizer;
 using UnityEngine;
+using UnityEngine.Events;
+using Work.Bakbak.Code.New_Folder;
 
 namespace CSI._01_Code
 {
@@ -16,6 +18,7 @@ namespace CSI._01_Code
 		private int strokeId = -1;
 
 		private Vector3 virtualKeyPosition = Vector2.zero;
+		private Vector3 currentvirtualKeyPosition = Vector2.zero;
 		private Rect drawArea;
 
 		private int vertexCount = 0;
@@ -23,6 +26,10 @@ namespace CSI._01_Code
 		[SerializeField] private LineRenderer currentGestureLineRenderer;
 	
 		private bool recognized;
+		
+		private float drowingTime;
+ 
+		public UnityEvent<ShapType> DrawedEvent;
     
 		void Start()
 		{
@@ -43,6 +50,7 @@ namespace CSI._01_Code
 		{
 			if (Input.GetMouseButton(0))
 			{
+				
 				virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
 			}
 
@@ -56,15 +64,22 @@ namespace CSI._01_Code
 						strokeId = -1;
 						points.Clear();
 						currentGestureLineRenderer.positionCount = 0;
+						SetTrailColor(Color.yellow);
 						vertexCount = 0;
+						drowingTime = 0;
 					}
 					
 
 				}
 				if (Input.GetMouseButton(0))
 				{
+					if (virtualKeyPosition != currentvirtualKeyPosition)
+					{
+						drowingTime++;
+						currentvirtualKeyPosition = virtualKeyPosition;
+					}
 					points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
-
+					currentGestureLineRenderer.colorGradient = new Gradient();
 					currentGestureLineRenderer.positionCount = ++vertexCount;
 					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
 					Gesture candidate = new Gesture(points.ToArray());
@@ -73,9 +88,6 @@ namespace CSI._01_Code
 					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 				}
 			}
-
-			
-
 			if (Input.GetMouseButtonUp(0))
 			{
 				recognized = true;
@@ -83,6 +95,10 @@ namespace CSI._01_Code
 				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
 				Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
+				if (gestureResult.Score > 0.7f)
+				{
+					DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
+				}
 			}
 		}
 
@@ -92,6 +108,51 @@ namespace CSI._01_Code
 
 			GestureIO.WriteGesture(points.ToArray(), newGestureName, fileName);
 		}
-    
+
+		private ShapType StringToShapType(string shape)
+		{
+			ShapType shapType = ShapType.HLine;
+			switch (shape)
+			{
+				case "HLine":
+					shapType = ShapType.HLine;
+					break;
+				case "Line":
+					shapType = ShapType.Line;
+					break;
+				case "O":
+					shapType = ShapType.circle;
+					break;
+				case "star":
+					shapType = ShapType.star;
+					break;
+				case "UnderCheck":
+					shapType = ShapType.UnderCheck;
+					break;
+				case "UperCheck":
+					shapType = ShapType.UpperCheck;
+					break;
+			}
+
+			return shapType;
+		}
+		private void SetTrailColor(Color color)
+		{
+			Gradient gradient = new Gradient();
+			gradient.colorKeys = new GradientColorKey[2];
+			gradient.colorKeys[0].color = color;
+			gradient.colorKeys[0].time = 0;
+			gradient.colorKeys[1].color = color;
+			gradient.colorKeys[1].time = 1;
+			gradient.alphaKeys = new GradientAlphaKey[2];
+			gradient.alphaKeys[0].alpha = 1;
+			gradient.alphaKeys[0].time = 0;
+			gradient.alphaKeys[1].alpha = 1;
+			gradient.alphaKeys[1].time = 1;
+			gradient.SetKeys(gradient.colorKeys, gradient.alphaKeys);
+			currentGestureLineRenderer.colorGradient = gradient;
+			currentGestureLineRenderer.startColor = color;
+			currentGestureLineRenderer.endColor = color;
+		}
 	}
 }
