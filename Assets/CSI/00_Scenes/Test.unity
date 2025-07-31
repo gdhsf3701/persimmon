@@ -318,12 +318,12 @@ MonoBehaviour:
   DrawedEvent:
     m_PersistentCalls:
       m_Calls: []
-  line: {fileID: 0}
-  hLine: {fileID: 0}
-  underCheck: {fileID: 0}
-  upperCheck: {fileID: 0}
-  star: {fileID: 0}
-  circle: {fileID: 0}
+  line: {fileID: 11400000, guid: 9d3a4c159cde1e44bbc5cb45e85e8e74, type: 2}
+  hLine: {fileID: 11400000, guid: 1d890f8b148e5774794d3d3a3d5d189e, type: 2}
+  underCheck: {fileID: 11400000, guid: 3371be262d43f1b418387d03836bb324, type: 2}
+  upperCheck: {fileID: 11400000, guid: 10a292c38640b64428408f7b3b07ee13, type: 2}
+  star: {fileID: 11400000, guid: 0a5415c7dc7e4884492545f448bab7bc, type: 2}
+  circle: {fileID: 11400000, guid: 7625aa08068503145a2df7f4c26cc018, type: 2}
 --- !u!4 &827886970
 Transform:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 1654665908}
   - component: {fileID: 1654665907}
   m_Layer: 0
-  m_Name: LineLender
+  m_Name: LineRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +556,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
