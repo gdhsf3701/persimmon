@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour
+public class EnemyMover : MonoBehaviour, IEntityCompo
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private Enemy owner;
+    private Vector2 moveDir = Vector2.zero;
+    private float moveSpeed;
     void Update()
     {
-        
+        transform.position += (Vector3) moveDir * moveSpeed * Time.deltaTime;
+    }
+
+    public void SetDir(Vector2 dir)
+    {
+        moveDir = dir;
+    }
+
+    public void Initialize(Enemy enemy)
+    {
+        owner = enemy;
     }
 }
