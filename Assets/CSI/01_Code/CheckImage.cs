@@ -19,13 +19,12 @@ namespace CSI._01_Code
 
 		private Vector3 virtualKeyPosition = Vector2.zero;
 		private Vector3 currentvirtualKeyPosition = Vector2.zero;
-		private Rect drawArea;
 
 		private int vertexCount = 0;
 
 		[SerializeField] private LineRenderer currentGestureLineRenderer;
 	
-		private bool recognized;
+		private bool recognized = true;
 		
 		private float drowingTime;
  
@@ -33,8 +32,6 @@ namespace CSI._01_Code
     
 		void Start()
 		{
-			drawArea = new Rect(0, 0, Screen.width, Screen.height);
-
 			//Load pre-made gestures
 			TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>($"GestureSet/10-stylus-MEDIUM/");
 			foreach (TextAsset gestureXml in gesturesXml)
@@ -53,23 +50,20 @@ namespace CSI._01_Code
 				
 				virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
 			}
-
-			if (drawArea.Contains(virtualKeyPosition)) // 그리는 영역에 들어왔을 때
+			Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			mousePosition.z = 0;
+			Vector3 rayDirection = (mousePosition - Camera.main.transform.position).normalized;
+			bool hit;
+			hit = Physics.Raycast(Camera.main.transform.position, rayDirection , 100f);
+			Debug.DrawRay(Camera.main.transform.position, rayDirection * 100f);
+			if (hit) // 그리는 영역에 들어왔을 때
 			{
 				if (Input.GetMouseButtonDown(0))
 				{
 					if (recognized)
 					{
-						recognized = false;
-						strokeId = -1;
-						points.Clear();
-						currentGestureLineRenderer.positionCount = 0;
-						SetTrailColor(Color.yellow);
-						vertexCount = 0;
-						drowingTime = 0;
+						ResetDraw();
 					}
-					
-
 				}
 				if (Input.GetMouseButton(0))
 				{
@@ -82,24 +76,47 @@ namespace CSI._01_Code
 					currentGestureLineRenderer.colorGradient = new Gradient();
 					currentGestureLineRenderer.positionCount = ++vertexCount;
 					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
+				}
+				if (Input.GetMouseButtonUp(0))
+				{
+					if (points.Count <= 0 || drowingTime < 5)
+					{
+						ResetDraw();
+						return;
+					}
+					recognized = true;
 					Gesture candidate = new Gesture(points.ToArray());
 					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
 					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
+					if (gestureResult.Score > 0.7f)
+					{
+						DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
+					}
 				}
 			}
-			if (Input.GetMouseButtonUp(0))
+			else
 			{
-				recognized = true;
-				Gesture candidate = new Gesture(points.ToArray());
-				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
-
-				Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
-				if (gestureResult.Score > 0.7f)
+				if (points.Count <= 0|| drowingTime < 5)
 				{
-					DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
+					ResetDraw();
+					return;
 				}
+						
+
 			}
+			
+		}
+
+		private void ResetDraw()
+		{
+			recognized = true;
+			strokeId = -1;
+			points.Clear();
+			currentGestureLineRenderer.positionCount = 0;
+			SetTrailColor(Color.yellow);
+			vertexCount = 0;
+			drowingTime = 0;
 		}
 
 		private void SaveData(string newGestureName = "")
