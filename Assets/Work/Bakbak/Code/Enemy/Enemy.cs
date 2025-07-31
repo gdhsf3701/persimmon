@@ -5,10 +5,10 @@ using Work.Bakbak.Code.Shape;
 
 public class Enemy : MonoBehaviour
 {
-    public event Action OnDespawn;
-
     public event Action OnHit;
     public event Action<Enemy> OnDeadEvent;
+
+    private IEntityCompo[] Compos;
 
     [ContextMenu("spawn")]
     public void Spawned()
@@ -18,19 +18,19 @@ public class Enemy : MonoBehaviour
 
     private void SetCompo()
     {
-        var compos = GetComponentsInChildren<IEntityCompo>();
-        foreach (IEntityCompo compo in compos)
+        Compos = GetComponentsInChildren<IEntityCompo>();
+        foreach (IEntityCompo compo in Compos)
         {
             compo.Initialize(this);
         }
-    }
-    public void Despawned()
-    {
-        OnDespawn?.Invoke();
     }
 
     public void OnDead()
     {
         OnDeadEvent?.Invoke(this);
+        foreach (IEntityCompo compo in Compos)
+        {
+            compo.Desolve();
+        }
     }
 }

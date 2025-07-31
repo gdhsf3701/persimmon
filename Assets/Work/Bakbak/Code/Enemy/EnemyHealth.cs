@@ -8,9 +8,9 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
     private Enemy owner;
 
     [SerializeField]
-    private List<ShapeSO> Hearts;
+    private List<ShapType> Hearts;
 
-    public void ApplyDamage(ShapeSO shape)
+    public void ApplyDamage(ShapType shape)
     {
         if(shape == Hearts[0])
         {
@@ -23,8 +23,15 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
         }
     }
 
+    public void Desolve()
+    {
+        AttackManager.Instance.OnAttack -= ApplyDamage;
+    }
+
     public void Initialize(Enemy enemy)
     {
         owner = enemy;
+
+        AttackManager.Instance.OnAttack += ApplyDamage;
     }
 }

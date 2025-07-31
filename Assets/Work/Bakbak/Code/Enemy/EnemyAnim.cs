@@ -6,6 +6,11 @@ public class EnemyAnim : MonoBehaviour, IEntityCompo
 
     private SpriteRenderer sprite;
 
+    public void Desolve()
+    {
+        
+    }
+
     public void Flip()
     {
         sprite.flipX = !sprite.flipX;
