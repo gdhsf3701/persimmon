@@ -16,6 +16,7 @@ namespace CSI._01_Code
 		private int strokeId = -1;
 
 		private Vector3 virtualKeyPosition = Vector2.zero;
+		private Vector3 currentvirtualKeyPosition = Vector2.zero;
 		private Rect drawArea;
 
 		private int vertexCount = 0;
@@ -23,6 +24,8 @@ namespace CSI._01_Code
 		[SerializeField] private LineRenderer currentGestureLineRenderer;
 	
 		private bool recognized;
+		
+		private float drowingTime;
     
 		void Start()
 		{
@@ -43,6 +46,7 @@ namespace CSI._01_Code
 		{
 			if (Input.GetMouseButton(0))
 			{
+				
 				virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
 			}
 
@@ -52,6 +56,8 @@ namespace CSI._01_Code
 				{
 					if (recognized)
 					{
+						SetTrailColor(Color.yellow);
+						drowingTime = 0;
 						recognized = false;
 						strokeId = -1;
 						points.Clear();
@@ -63,8 +69,13 @@ namespace CSI._01_Code
 				}
 				if (Input.GetMouseButton(0))
 				{
+					if (virtualKeyPosition != currentvirtualKeyPosition)
+					{
+						drowingTime++;
+						currentvirtualKeyPosition = virtualKeyPosition;
+					}
 					points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
-
+					currentGestureLineRenderer.colorGradient = new Gradient();
 					currentGestureLineRenderer.positionCount = ++vertexCount;
 					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
 					Gesture candidate = new Gesture(points.ToArray());
@@ -73,9 +84,6 @@ namespace CSI._01_Code
 					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 				}
 			}
-
-			
-
 			if (Input.GetMouseButtonUp(0))
 			{
 				recognized = true;
@@ -92,6 +100,24 @@ namespace CSI._01_Code
 
 			GestureIO.WriteGesture(points.ToArray(), newGestureName, fileName);
 		}
-    
+
+		private void SetTrailColor(Color color)
+		{
+			Gradient gradient = new Gradient();
+			gradient.colorKeys = new GradientColorKey[2];
+			gradient.colorKeys[0].color = color;
+			gradient.colorKeys[0].time = 0;
+			gradient.colorKeys[1].color = color;
+			gradient.colorKeys[1].time = 1;
+			gradient.alphaKeys = new GradientAlphaKey[2];
+			gradient.alphaKeys[0].alpha = 1;
+			gradient.alphaKeys[0].time = 0;
+			gradient.alphaKeys[1].alpha = 1;
+			gradient.alphaKeys[1].time = 1;
+			gradient.SetKeys(gradient.colorKeys, gradient.alphaKeys);
+			currentGestureLineRenderer.colorGradient = gradient;
+			currentGestureLineRenderer.startColor = color;
+			currentGestureLineRenderer.endColor = color;
+		}
 	}
 }
