@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UnderCheckShapeSO
   m_EditorClassIdentifier: 
   shape: 2
-  color: {r: 1, g: 0.976174, b: 0, a: 0}
+  color: {r: 1, g: 0.976174, b: 0, a: 1}

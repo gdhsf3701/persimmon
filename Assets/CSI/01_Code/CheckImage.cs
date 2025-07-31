@@ -29,6 +29,7 @@ namespace CSI._01_Code
 		private float drowingTime;
  
 		public UnityEvent<ShapType> DrawedEvent;
+		[SerializeField] private ParticleSystem particleSystem;
 
 		[SerializeField] private ShapeSO line;
 		[SerializeField] private ShapeSO hLine;
@@ -38,9 +39,11 @@ namespace CSI._01_Code
 		[SerializeField] private ShapeSO circle;
 		[SerializeField] private ShapeSO eleck;
 		
+		ParticleSystem.MainModule main;
     
 		void Start()
 		{
+			main = particleSystem.main;
 			//Load pre-made gestures
 			TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>($"GestureSet/10-stylus-MEDIUM/");
 			foreach (TextAsset gestureXml in gesturesXml)
@@ -72,6 +75,9 @@ namespace CSI._01_Code
 					if (recognized)
 					{
 						ResetDraw();
+						particleSystem.Play();
+						Vector3 pos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
+						particleSystem.transform.position = new Vector3(pos.x, pos.y, 0);
 					}
 				}
 				if (Input.GetMouseButton(0))
@@ -88,12 +94,20 @@ namespace CSI._01_Code
 					Gesture candidate = new Gesture(points.ToArray());
 					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 					ShapeSO shapType = GetShapeSo(StringToShapType(gestureResult.GestureClass));
-					if(gestureResult.Score > 0.7f)
+					Vector3 pos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
+					particleSystem.transform.position = new Vector3(pos.x, pos.y, 0);
+					if (gestureResult.Score > 0.7f)
+					{
 						SetTrailColor(shapType.Color, drowingTime/30);
+						main.startColor = shapType.Color;
+						main.startColor = shapType.Color;
+					}
 					else
+					{
 						SetTrailColor(Color.white, drowingTime/30);
+						main.startColor = Color.white;
+					}
 				}
-				
 			}
 			else
 			{
@@ -121,7 +135,7 @@ namespace CSI._01_Code
 					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 					DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
 				}
-
+				particleSystem.Stop();
 				ResetDraw();
 			}
 		}

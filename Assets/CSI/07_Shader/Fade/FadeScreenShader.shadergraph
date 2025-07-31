@@ -8,6 +8,9 @@
         },
         {
             "m_Id": "d279d4173cda472c8ace709ed4a2a6e9"
+        },
+        {
+            "m_Id": "12ab1dc7304d4f4b87a53a5d38547588"
         }
     ],
     "m_Keywords": [],
@@ -83,6 +86,9 @@
         },
         {
             "m_Id": "5be49cb861e244ae93ae05b84457fcc8"
+        },
+        {
+            "m_Id": "7376007941e24e1ea2be0d8ac935c68e"
         }
     ],
     "m_GroupDatas": [
@@ -207,6 +213,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "7376007941e24e1ea2be0d8ac935c68e"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "1195f5a9b4f14f88a6dbc52f536a7755"
+                },
+                "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "b10d04da3dce4a6bbe24fd790f9961de"
                 },
                 "m_SlotId": 0
@@ -277,8 +297,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": -293.0,
+            "y": -57.99997329711914
         },
         "m_Blocks": [
             {
@@ -294,8 +314,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 193.0
+            "x": -293.0,
+            "y": 135.0
         },
         "m_Blocks": [
             {
@@ -481,8 +501,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -613.0000610351563,
-            "y": 350.00006103515627,
+            "x": -643.0000610351563,
+            "y": 281.0,
             "width": 208.00003051757813,
             "height": 302.0
         }
@@ -509,6 +529,34 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "12ab1dc7304d4f4b87a53a5d38547588",
+    "m_Guid": {
+        "m_GuidSerialized": "99e05175-8d56-4fce-9ad8-02c21b24b820"
+    },
+    "m_Name": "Clip",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Clip",
+    "m_DefaultReferenceName": "_Clip",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
     }
 }
 
@@ -770,6 +818,9 @@
         },
         {
             "m_Id": "d279d4173cda472c8ace709ed4a2a6e9"
+        },
+        {
+            "m_Id": "12ab1dc7304d4f4b87a53a5d38547588"
         }
     ]
 }
@@ -780,8 +831,8 @@
     "m_ObjectId": "2abc24c2526344189c753c843246dae9",
     "m_Title": "원형 마스크 만들기",
     "m_Position": {
-        "x": -2137.999755859375,
-        "y": 304.0
+        "x": -2138.0,
+        "y": 304.0000305175781
     }
 }
 
@@ -1245,7 +1296,7 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 1.0,
+        "e00": 0.0,
         "e01": 2.0,
         "e02": 2.0,
         "e03": 2.0,
@@ -1294,10 +1345,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1359.0,
-            "y": 78.99999237060547,
+            "x": -1360.0,
+            "y": 78.00000762939453,
             "width": 128.0,
-            "height": 34.00000762939453
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -1470,6 +1521,42 @@
     "m_ShaderOutputName": "Out",
     "m_StageCapability": 3,
     "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "7376007941e24e1ea2be0d8ac935c68e",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -751.0000610351563,
+            "y": 450.0000305175781,
+            "width": 95.0,
+            "height": 33.999969482421878
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "bc09e4ea9ea5428aae954c3e0e0dc51a"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "12ab1dc7304d4f4b87a53a5d38547588"
+    }
 }
 
 {
@@ -1978,6 +2065,21 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "bc09e4ea9ea5428aae954c3e0e0dc51a",
+    "m_Id": 0,
+    "m_DisplayName": "Clip",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {

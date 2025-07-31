@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: StarShapeSO
   m_EditorClassIdentifier: 
   shape: 4
-  color: {r: 1, g: 0, b: 0.7529564, a: 0}
+  color: {r: 1, g: 0, b: 0.7529564, a: 1}

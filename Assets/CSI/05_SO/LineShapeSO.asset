@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LineShapeSO
   m_EditorClassIdentifier: 
   shape: 0
-  color: {r: 1, g: 0, b: 0, a: 0}
+  color: {r: 1, g: 0, b: 0, a: 1}

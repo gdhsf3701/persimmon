@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CircleShapeSO
   m_EditorClassIdentifier: 
   shape: 5
-  color: {r: 0, g: 0.76483536, b: 1, a: 0}
+  color: {r: 0, g: 0.76483536, b: 1, a: 1}
