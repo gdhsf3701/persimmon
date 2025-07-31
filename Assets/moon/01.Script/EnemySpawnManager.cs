@@ -33,7 +33,8 @@ namespace moon._01.Script
             {
                 _timer = 0;
                 int rand = Random.Range(0, many);
-                Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity);
+                GameObject obj = Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity);
+                obj.GetComponent<Enemy>().Spawned();
                 SpawnCount--;
             }
         }
