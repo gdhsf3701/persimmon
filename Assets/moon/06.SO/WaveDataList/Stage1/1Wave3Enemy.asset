@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffaa7e8ddb9d4c61a34f4d878a8e10f4, type: 3}
-  m_Name: Wave2Enemy 1
+  m_Name: 1Wave3Enemy
   m_EditorClassIdentifier: 
-  <EnemySpawnCount>k__BackingField: 30
-  <SpawnTime>k__BackingField: 0.75
+  <EnemySpawnCount>k__BackingField: 5
+  <SpawnTime>k__BackingField: 0.85
   <EnemyPrefabs>k__BackingField:
-  - {fileID: 5069258627933535548, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
+  - {fileID: 9043274480003266395, guid: efb617a3f15e9e44e88aa43b59ac2611, type: 3}
+  - {fileID: 7644877135297111850, guid: 088eea59840eaa5498d1afb3aaf57db9, type: 3}
