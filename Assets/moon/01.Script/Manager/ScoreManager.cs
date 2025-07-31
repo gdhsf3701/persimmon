@@ -17,6 +17,11 @@ namespace moon._01.Script.Manager
             _gameManager.SpawnManager.OnScoreChangeEvent += PlusScore;
         }
 
+        private void OnDestroy()
+        {
+            _gameManager.SpawnManager.OnScoreChangeEvent -= PlusScore;
+        }
+
         private void PlusScore(int score)
             => _score += score;
         
