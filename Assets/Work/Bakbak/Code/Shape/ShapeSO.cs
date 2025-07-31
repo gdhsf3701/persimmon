@@ -10,6 +10,7 @@ namespace Work.Bakbak.Code.Shape
         UpperCheck,
         Star,
         Circle,
+        Eleck
     }
     [CreateAssetMenu(fileName = "ShapeSO", menuName = "SO/ShapeSO")]
     public class ShapeSO : ScriptableObject
