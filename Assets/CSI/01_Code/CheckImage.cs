@@ -4,6 +4,8 @@ using System.IO;
 using PDollar_drowingTool.Scripts;
 using PDollarGestureRecognizer;
 using UnityEngine;
+using UnityEngine.Events;
+using Work.Bakbak.Code.New_Folder;
 
 namespace CSI._01_Code
 {
@@ -26,6 +28,8 @@ namespace CSI._01_Code
 		private bool recognized;
 		
 		private float drowingTime;
+ 
+		public UnityEvent<ShapType> DrawedEvent;
     
 		void Start()
 		{
@@ -56,13 +60,13 @@ namespace CSI._01_Code
 				{
 					if (recognized)
 					{
-						SetTrailColor(Color.yellow);
-						drowingTime = 0;
 						recognized = false;
 						strokeId = -1;
 						points.Clear();
 						currentGestureLineRenderer.positionCount = 0;
+						SetTrailColor(Color.yellow);
 						vertexCount = 0;
+						drowingTime = 0;
 					}
 					
 
@@ -91,6 +95,10 @@ namespace CSI._01_Code
 				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
 				Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
+				if (gestureResult.Score > 0.7f)
+				{
+					DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
+				}
 			}
 		}
 
@@ -101,6 +109,33 @@ namespace CSI._01_Code
 			GestureIO.WriteGesture(points.ToArray(), newGestureName, fileName);
 		}
 
+		private ShapType StringToShapType(string shape)
+		{
+			ShapType shapType = ShapType.HLine;
+			switch (shape)
+			{
+				case "HLine":
+					shapType = ShapType.HLine;
+					break;
+				case "Line":
+					shapType = ShapType.Line;
+					break;
+				case "O":
+					shapType = ShapType.circle;
+					break;
+				case "star":
+					shapType = ShapType.star;
+					break;
+				case "UnderCheck":
+					shapType = ShapType.UnderCheck;
+					break;
+				case "UperCheck":
+					shapType = ShapType.UpperCheck;
+					break;
+			}
+
+			return shapType;
+		}
 		private void SetTrailColor(Color color)
 		{
 			Gradient gradient = new Gradient();
