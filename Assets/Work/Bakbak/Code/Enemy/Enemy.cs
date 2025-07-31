@@ -32,5 +32,7 @@ public class Enemy : MonoBehaviour
         {
             compo.Desolve();
         }
+
+        Destroy(gameObject);
     }
 }
