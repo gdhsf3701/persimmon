@@ -33,7 +33,7 @@ namespace PDollar_drowingTool.Scripts
             for (int i = 0; i < points.Length; i++)
                 this.PointsRaw[i] = new Point(points[i].X, points[i].Y, points[i].StrokeID);
 
-            this.Normalize(true);
+            this.Normalize(false);
         }
 
         /// <summary>
