@@ -7,11 +7,10 @@ namespace moon._01.Script.Manager
 {
     public class EnemySpawnManager : MonoBehaviour
     {
-        [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private float distance;
         [SerializeField] private int many;
         [SerializeField] private float spawnTime;
-        private float _timeMultiply;
+        private List<GameObject> _enemyPrefabs = new List<GameObject>();
         private float _timer = 0;
         private int _enemyCount = 0;
 
@@ -21,12 +20,21 @@ namespace moon._01.Script.Manager
 
         private List<Enemy> _actionEnemy = new List<Enemy>();
 
-        public void ResetSpawnManager(int spawnCount = 1)
+        public void ResetSpawnManager(int spawnCount , float time , List<GameObject> enemyPrefabs)
         {
             _timer = 0;
-            _timeMultiply = 1;
             _enemyCount = 0;
             SpawnCount = spawnCount;
+            spawnTime = time;
+            _enemyPrefabs = enemyPrefabs;
+        }
+        
+        public void SetNextWave(int spawnCount , float time , List<GameObject> enemyPrefabs)
+        {
+            SpawnCount = spawnCount;
+            _enemyPrefabs = enemyPrefabs;
+            spawnTime = time;
+            _timer = 0;
         }
 
         private void EnemyDie(Enemy enemy)
@@ -50,15 +58,10 @@ namespace moon._01.Script.Manager
             }
         }
 
-        public void SetSpawnCount(int spawnCount)
-        {
-            SpawnCount = spawnCount;
-        }
-
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (SpawnCount > 0 && _timer >= spawnTime * _timeMultiply)
+            if (SpawnCount > 0 && _timer >= spawnTime)
             {
                 _timer = 0;
                 SpawnEnemy();
@@ -68,7 +71,8 @@ namespace moon._01.Script.Manager
         private void SpawnEnemy()
         {
             int rand = Random.Range(0, many);
-            Enemy obj = Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity).GetComponent<Enemy>();
+            int enemyRand = Random.Range(0, _enemyPrefabs.Count);
+            Enemy obj = Instantiate(_enemyPrefabs[enemyRand] , IntToPos(rand) ,Quaternion.identity).GetComponent<Enemy>();
             obj.Spawned();
             _enemyCount++;
             _actionEnemy.Add(obj);
