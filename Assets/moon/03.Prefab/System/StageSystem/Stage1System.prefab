@@ -57,9 +57,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1174ab5ca36def44d829c644d34fd815, type: 2}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: <CutSceneMany>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: <BossEnemy>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: <WaveEnemy>k__BackingField.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<BossEnemy>k__BackingField.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1174ab5ca36def44d829c644d34fd815, type: 2}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: '<WaveEnemy>k__BackingField.Array.data[0]'
       value: 
@@ -75,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: '<WaveEnemy>k__BackingField.Array.data[3]'
       value: 
-      objectReference: {fileID: 11400000, guid: 1174ab5ca36def44d829c644d34fd815, type: 2}
+      objectReference: {fileID: 11400000, guid: 5962c20e0ad49b54caf2ae456403e545, type: 2}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: <waveEnemy>k__BackingField._serializedList.Array.size
       value: 4
