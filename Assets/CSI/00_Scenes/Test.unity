@@ -318,6 +318,12 @@ MonoBehaviour:
   DrawedEvent:
     m_PersistentCalls:
       m_Calls: []
+  line: {fileID: 0}
+  hLine: {fileID: 0}
+  underCheck: {fileID: 0}
+  upperCheck: {fileID: 0}
+  star: {fileID: 0}
+  circle: {fileID: 0}
 --- !u!4 &827886970
 Transform:
   m_ObjectHideFlags: 0

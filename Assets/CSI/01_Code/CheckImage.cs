@@ -5,7 +5,7 @@ using PDollar_drowingTool.Scripts;
 using PDollarGestureRecognizer;
 using UnityEngine;
 using UnityEngine.Events;
-using Work.Bakbak.Code.New_Folder;
+using Work.Bakbak.Code.Shape;
 
 namespace CSI._01_Code
 {
@@ -29,6 +29,14 @@ namespace CSI._01_Code
 		private float drowingTime;
  
 		public UnityEvent<ShapType> DrawedEvent;
+
+		[SerializeField] private ShapeSO line;
+		[SerializeField] private ShapeSO hLine;
+		[SerializeField] private ShapeSO underCheck;
+		[SerializeField] private ShapeSO upperCheck;
+		[SerializeField] private ShapeSO star;
+		[SerializeField] private ShapeSO circle;
+		
     
 		void Start()
 		{
@@ -138,10 +146,10 @@ namespace CSI._01_Code
 					shapType = ShapType.Line;
 					break;
 				case "O":
-					shapType = ShapType.circle;
+					shapType = ShapType.Circle;
 					break;
 				case "star":
-					shapType = ShapType.star;
+					shapType = ShapType.Star;
 					break;
 				case "UnderCheck":
 					shapType = ShapType.UnderCheck;
