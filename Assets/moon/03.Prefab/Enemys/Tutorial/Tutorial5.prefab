@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3329403119229910147
+--- !u!1001 &1366522745104259340
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -50,19 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3933764431249144588, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
       propertyPath: moveSpeed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5003976635068138324, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
-      propertyPath: hearts.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5003976635068138324, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
-      propertyPath: 'hearts.Array.data[1]'
+      propertyPath: 'hearts.Array.data[0]'
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5069258627933535548, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
       propertyPath: m_Name
-      value: StarFish2
+      value: Tutorial5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
