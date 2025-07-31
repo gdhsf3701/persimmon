@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Work.Bakbak.Code.New_Folder;
 
 public class Enemy : MonoBehaviour
 {
     public event Action OnDespawn;
 
     public event Action<ShapeSO> OnHit;
+    public event Action<ShapeSO> OnDeadEvent;
     public void Spawned()
     {
         SetCompo();
