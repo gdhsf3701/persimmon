@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1362091498430998048}
   - component: {fileID: -1681852277557707589}
+  - component: {fileID: 2031303110124306798}
+  - component: {fileID: 4845737827589769314}
   m_Layer: 0
   m_Name: TmpEnemy
   m_TagString: Untagged
@@ -87,3 +89,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2031303110124306798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419787506466731745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39741e6b44b6604ea4b5b94614e0646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4845737827589769314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419787506466731745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbcf3d8f1b9abe4288f07fb303751af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hearts:
+  - {fileID: 11400000, guid: 9d3a4c159cde1e44bbc5cb45e85e8e74, type: 2}
