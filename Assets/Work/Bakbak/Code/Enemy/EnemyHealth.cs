@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Work.Bakbak.Code.New_Folder;
+using Work.Bakbak.Code.Shape;
 
 public class EnemyHealth : MonoBehaviour, IEntityCompo
 {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CSILib.SoundManager.RunTime
+namespace csiimnida.CSILib.SoundManager.RunTime
 {
     public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
@@ -17,13 +17,11 @@ namespace CSILib.SoundManager.RunTime
                 if (_instance == null)
                 {
                     _instance = GameObject.FindAnyObjectByType<T>();
-
                     if (_instance == null)
                         Debug.LogError($"{typeof(T).Name} singleton is not exist");
                     else
                         IsDestroyed = false;
-
-
+                    DontDestroyOnLoad(_instance);
                 }
                 return _instance;
             }

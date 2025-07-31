@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Work.Bakbak.Code.New_Folder
+namespace Work.Bakbak.Code.Shape
 {
     public enum ShapType
     {
@@ -8,8 +8,8 @@ namespace Work.Bakbak.Code.New_Folder
         HLine,
         UnderCheck,
         UpperCheck,
-        star,
-        circle,
+        Star,
+        Circle,
     }
     [CreateAssetMenu(fileName = "ShapeSO", menuName = "SO/ShapeSO")]
     public class ShapeSO : ScriptableObject
