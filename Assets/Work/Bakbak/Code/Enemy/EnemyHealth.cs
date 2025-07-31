@@ -6,18 +6,19 @@ using Work.Bakbak.Code.Shape;
 public class EnemyHealth : MonoBehaviour, IEntityCompo
 {
     private Enemy owner;
+    private HeartUI heartui;
 
     [SerializeField]
-    private List<ShapType> Hearts;
+    private List<ShapType> hearts;
 
     public void ApplyDamage(ShapType shape)
     {
-        if(shape == Hearts[0])
+        if(shape == hearts[0])
         {
-            Hearts.RemoveAt(0);
+            hearts.RemoveAt(0);
+            heartui.SetAllHeart(hearts);
         }
-
-        if(Hearts.Count == 0)
+        if(hearts.Count == 0)
         {
             owner.OnDead();
         }
@@ -33,5 +34,8 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
         owner = enemy;
 
         AttackManager.Instance.OnAttack += ApplyDamage;
+
+        heartui = owner.GetComponentInChildren<HeartUI>();
+        heartui.SetAllHeart(hearts);
     }
 }
