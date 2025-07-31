@@ -1,34 +1,44 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FadeScreenManager : MonoBehaviour
+namespace CSI._07_Shader.Fade
 {
-    [SerializeField] private Image _fadeImage;
-    [SerializeField] private float _fadeDuration = 0.5f;
-    private readonly int _valueHash = Shader.PropertyToID("_Value");
-
-    private void Awake()
+    public class FadeScreenManager : MonoBehaviour
     {
-        _fadeImage.material = new Material(_fadeImage.material);
-        HandleFadeEvent(true);
-    }
+        [SerializeField] private Image _fadeImage;
+        [SerializeField] private Transform cirle;
+        [SerializeField] private float _fadeDuration = 0.5f;
+        private readonly int _valueHash = Shader.PropertyToID("_Value");
 
-    private void HandleFadeEvent(bool isFadeIn)
-    {
-        float fadeValue = isFadeIn ? 2.5f : 0f;
-        float startValue = isFadeIn ? 0f : 2.5f;
-        
-        _fadeImage.material.SetFloat(_valueHash,startValue);
-        
-       
-        
-        var tweenCore = _fadeImage.material.DOFloat(fadeValue, _valueHash, _fadeDuration);
-
-        if (isFadeIn == false)
+        private void Awake()
         {
-            tweenCore.OnComplete(() => print("Fade in"));
+            _fadeImage.material = new Material(_fadeImage.material);
+            HandleFadeEvent(2.5f);
+        }
+
+        IEnumerator Start()
+        {
+            var wait = new WaitForSeconds(5);
+            while (true)
+            {
+                yield return wait;
+                HandleFadeEvent(Random.Range(0, 2.2f));
+            }
+        }
+        private void HandleFadeEvent(float value)
+        {
+            float clampvalue = Mathf.Clamp(value, 0, 2.2f);
+        
+            _fadeImage.material.SetFloat(_valueHash,clampvalue);
+            
+        
+            var tweenCore = _fadeImage.material.DOFloat(clampvalue, _valueHash, _fadeDuration);
+            clampvalue *= 10;
+            cirle.localScale = new Vector3(clampvalue, clampvalue, clampvalue);
+
         }
     }
 }
