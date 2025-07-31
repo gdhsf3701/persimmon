@@ -15,9 +15,15 @@ namespace moon._01.Script
         private void Awake()
         {
             _spawnManager = spawnManagerFinder.GetTarget<EnemySpawnManager>();
+            _spawnManager.NextWaveEvent += NextWave;
             ResetWave();
         }
-        
+
+        private void OnDestroy()
+        {
+            _spawnManager.NextWaveEvent -= NextWave;
+        }
+
         public void NextWave()
         {
             Wave++;

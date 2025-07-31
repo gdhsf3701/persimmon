@@ -12,13 +12,24 @@ namespace moon._01.Script
         [SerializeField] private float spawnTime;
         private float _timeMultiply;
         private float _timer = 0;
+        private int _enemyCount = 0;
+
+        public event Action NextWaveEvent;
         public int SpawnCount { get; private set; } = 0;
 
         public void ResetSpawnManager(int spawnCount = 1)
         {
             _timer = 0;
             _timeMultiply = 1;
+            _enemyCount = 0;
             SpawnCount = spawnCount;
+        }
+
+        private void EnemyDie(Enemy enemy)
+        {
+            _enemyCount--;
+            NextWaveEvent?.Invoke();
+            enemy.OnDeadEvent -= EnemyDie;
         }
 
         public void SetSpawnCount(int spawnCount)
@@ -33,8 +44,10 @@ namespace moon._01.Script
             {
                 _timer = 0;
                 int rand = Random.Range(0, many);
-                GameObject obj = Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity);
-                obj.GetComponent<Enemy>().Spawned();
+                Enemy obj = Instantiate(enemyPrefab , IntToPos(rand) ,Quaternion.identity).GetComponent<Enemy>();
+                obj.Spawned();
+                _enemyCount++;
+                obj.OnDeadEvent += EnemyDie;
                 SpawnCount--;
             }
         }
