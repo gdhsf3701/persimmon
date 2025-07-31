@@ -81,9 +81,10 @@ namespace CSI._01_Code
 						currentvirtualKeyPosition = virtualKeyPosition;
 					}
 					points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
-					currentGestureLineRenderer.colorGradient = new Gradient();
 					currentGestureLineRenderer.positionCount = ++vertexCount;
 					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
+					if (points.Count <= 0 || drowingTime < 5) return;
+					
 				}
 				if (Input.GetMouseButtonUp(0))
 				{

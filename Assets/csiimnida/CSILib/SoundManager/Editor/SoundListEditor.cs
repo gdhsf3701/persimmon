@@ -145,15 +145,12 @@ namespace csiimnida.CSILib.SoundManager.Editor
 
         private void OnEnable()
         {
-            Debug.Log("Enable called");
             Reset();
         }
 
         private void OnBecameInvisible()
         {
-            Debug.Log("OnBecameInvisible called");
             Reset();
-
         }
 
         private void Reset()
