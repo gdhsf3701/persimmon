@@ -6,11 +6,18 @@ public class EnemyMover : MonoBehaviour, IEntityCompo
     private Vector2 moveDir = Vector2.zero;
     [SerializeField]
     private float moveSpeed;
+
+    [SerializeField] private float dieUpSpeed = 1.25f;
     private bool acivate = false;
     void Update()
     {
-        if(acivate == false || owner.IsDead)
+        if(acivate == false)
             return;
+        if (owner.IsDead)
+        {
+            transform.position += Vector3.up * dieUpSpeed * Time.deltaTime;
+            return;
+        }
         transform.position += (Vector3) moveDir * moveSpeed * Time.deltaTime;
     }
 
