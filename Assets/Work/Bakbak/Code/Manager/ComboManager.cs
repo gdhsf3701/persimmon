@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -38,7 +39,20 @@ public class ComboManager : MonoBehaviour
 
     private void ShowScore()
     {
-        Score.SetText(score.ToString());
+        StartCoroutine(ShowScore(score));
+    }
+
+    private IEnumerator ShowScore(int targetScore)
+    {
+        int currentvalue = (int)targetScore / 2;
+        while(currentvalue <= targetScore)
+        {
+            currentvalue = (int)(targetScore + currentvalue) / 2;
+            Score.SetText(currentvalue.ToString());
+            yield return null;
+        }
+        yield return null;
+        Score.SetText(targetScore.ToString());
     }
 
     private void ShowCombo()
