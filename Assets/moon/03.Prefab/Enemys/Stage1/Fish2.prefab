@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5003976635068138324, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
       propertyPath: 'hearts.Array.data[0]'
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5003976635068138324, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
       propertyPath: 'hearts.Array.data[1]'
