@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 public class Enemy : MonoBehaviour
 {
     [field: SerializeField] public ScriptFinderSO PlayerFinder {get; private set;}
+    [field: SerializeField] public ScriptFinderSO ComboFinder { get; private set; }
     public event Action OnHit;
     public event Action<Enemy> OnDeadEvent;
 
@@ -19,8 +20,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private int reward = 10;
-
-    private ScriptFinderSO finder;
+    
     [SerializeField]
     private ParticleSystem particle;
 
@@ -45,8 +45,7 @@ public class Enemy : MonoBehaviour
     [ContextMenu("spawn")]
     public void Spawned()
     {
-        finder = Resources.Load<ScriptFinderSO>("Finder/PlayerFinder");
-        target = finder.GetTarget<Player>();
+        target = PlayerFinder.GetTarget<Player>();
         SetCompo();
         enemyAnimator.ChangeAnimation("MOVE");
         enemyAnimator.OnDieAnimationEndEvent += DeadAniEnd;
@@ -114,7 +113,7 @@ public class Enemy : MonoBehaviour
         
         enemyAnimator.ChangeAnimation("DEAD");
         
-        finder.GetTarget<ComboManager>().Kill(this);
+        ComboFinder.GetTarget<ComboManager>().Kill(this);
 
         enemyMover.OnAttackEvent -= Attack;
         
