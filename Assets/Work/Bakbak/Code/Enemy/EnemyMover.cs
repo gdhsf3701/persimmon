@@ -6,9 +6,10 @@ public class EnemyMover : MonoBehaviour, IEntityCompo
     private Vector2 moveDir = Vector2.zero;
     [SerializeField]
     private float moveSpeed;
+    private bool acivate = false;
     void Update()
     {
-        if(owner.IsDead)
+        if(acivate == false || owner.IsDead)
             return;
         transform.position += (Vector3) moveDir * moveSpeed * Time.deltaTime;
     }
@@ -20,12 +21,13 @@ public class EnemyMover : MonoBehaviour, IEntityCompo
 
     public void Initialize(Enemy enemy)
     {
+        acivate = true;
         owner = enemy;
         SetTargetPos(new Vector2(0, 0));
     }
 
     public void Desolve()
     {
-
+        acivate = false ;
     }
 }

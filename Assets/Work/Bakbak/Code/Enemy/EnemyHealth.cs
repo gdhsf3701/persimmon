@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
         }
         if(hearts.Count == 0)
         {
-            owner.OnDead();
+             owner.OnDead();
         }
     }
 
