@@ -7,7 +7,7 @@ public class HeartCounter : MonoBehaviour
     [SerializeField]
     private List<Image> heartPoints;
 
-    private int currentHealth;
+    private int currentHealth = 5;
     public void setUI()
     {
         int i = 0;
@@ -19,5 +19,16 @@ public class HeartCounter : MonoBehaviour
         {
             heartPoints[i].enabled =false;
         }
+    }
+
+    public bool Damage()
+    {
+        currentHealth--;
+        setUI();
+        if(currentHealth == 0)
+        {
+            return true;
+        }
+        return false;
     }
 }
