@@ -42,6 +42,11 @@ namespace moon._01.Script.Enemys
         public void Initialize(Enemy enemy)
         {
             _enemy = enemy;
+
+             if(enemy.target.transform.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z); 
+            }
         }
 
         public void Desolve()
