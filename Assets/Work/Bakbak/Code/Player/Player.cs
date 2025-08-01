@@ -24,12 +24,13 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
+        animator.SetBool("IDLE", false);
         animator.SetBool("DIE", true);
     }
 
     public void Attack(ShapType type)
     {
-        animator.SetBool("IDLE", false);
+        //animator.SetBool("IDLE", false);
 
         switch (type)
         {

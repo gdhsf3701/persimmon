@@ -76,7 +76,7 @@ namespace moon._01.Script.Manager
 
             var (count, time, prefabs) = GetWaveData();
             BossWave++;
-            SpawnManager.SetNextWave(count, time, prefabs);
+            SpawnManager.SetNextWave(count, time, prefabs,true);
         }
 
         public void ResetWave()
