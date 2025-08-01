@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/CSI/00_Scenes/Start.unity
-    guid: d135072b44b6a784d897df8a226dcc82
+    path: Assets/moon/00.Scene/Setting.unity
+    guid: 763455682ee5cc54491cfd04bbb3760c
+  - enabled: 1
+    path: Assets/moon/00.Scene/Stage1.unity
+    guid: b97c5291f7685984bac5c4bfe3951428
+  - enabled: 1
+    path: Assets/moon/00.Scene/Stage2.unity
+    guid: 1eb6107287316f840a90685460f9aef2
+  - enabled: 1
+    path: Assets/moon/00.Scene/Stage3.unity
+    guid: b0e1a675e1de92c49a86d4dd1e31116c
+  - enabled: 1
+    path: Assets/moon/00.Scene/Stage4.unity
+    guid: 9c8b269061d16a9498f48599f6c94f31
+  - enabled: 1
+    path: Assets/moon/00.Scene/Tutorial.unity
+    guid: d812883a478daa642aa7237f7239af69
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
