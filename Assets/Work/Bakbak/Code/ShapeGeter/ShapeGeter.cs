@@ -10,6 +10,7 @@ public class ShapeGeter : MonoSingleton<ShapeGeter>
     private Sprite upperCheck;
     private Sprite star;
     private Sprite circle;
+    private Sprite eleck;
 
     private bool loaded = false;
     public Sprite GetShape(ShapType type)
@@ -22,6 +23,7 @@ public class ShapeGeter : MonoSingleton<ShapeGeter>
             upperCheck = Resources.Load<Sprite>("shapes/101_20250801173349");
             star = Resources.Load<Sprite>   ("shapes/101_20250801173029");
             circle = Resources.Load<Sprite>("shapes/100_20250801171814");
+            eleck = Resources.Load<Sprite>("shapes/101_20250802010029");
         }
         switch (type)
         {
@@ -37,6 +39,8 @@ public class ShapeGeter : MonoSingleton<ShapeGeter>
                 return star;
             case ShapType.Circle:
                 return circle;
+            case ShapType.Eleck:
+                return eleck;
             default:
                 return null;
         }
