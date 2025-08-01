@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 416873190202697175, guid: 565821d8604460544ba35d435c734faa, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3954821999651283932, guid: 565821d8604460544ba35d435c734faa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +54,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8432728345758557159, guid: 565821d8604460544ba35d435c734faa, type: 3}
       propertyPath: m_Name
-      value: Nemo1 Variant
+      value: Nemo2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516091534781111695, guid: 565821d8604460544ba35d435c734faa, type: 3}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516091534781111695, guid: 565821d8604460544ba35d435c734faa, type: 3}
+      propertyPath: 'hearts.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516091534781111695, guid: 565821d8604460544ba35d435c734faa, type: 3}
+      propertyPath: 'hearts.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516091534781111695, guid: 565821d8604460544ba35d435c734faa, type: 3}
+      propertyPath: 'hearts.Array.data[2]'
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
