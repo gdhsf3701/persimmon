@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CSI._07_Shader.Fade;
 using NUnit.Framework;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,9 +12,11 @@ namespace moon._01.Script.Manager
         [SerializeField] private float distance;
         [SerializeField] private int many;
         [SerializeField] private float spawnTime;
+        [SerializeField] private FadeScreenManager fadeScreenManager;
         private List<GameObject> _enemyPrefabs = new List<GameObject>();
         
         private float _timer = 0;
+        private float _Alltimer = 0;
         private int _enemyCount = 0;
 
         public event Action<int> OnScoreChangeEvent;
@@ -29,14 +32,24 @@ namespace moon._01.Script.Manager
             SpawnCount = spawnCount;
             spawnTime = time;
             _enemyPrefabs = enemyPrefabs;
+            _Alltimer = 0;
         }
         
-        public void SetNextWave(int spawnCount , float time , List<GameObject> enemyPrefabs)
+        public void SetNextWave(int spawnCount , float time , List<GameObject> enemyPrefabs,bool isBoolWave = false)
         {
+            Debug.Log("SetNextWave");
             SpawnCount = spawnCount;
             _enemyPrefabs = enemyPrefabs;
             spawnTime = time;
             _timer = 0;
+            if (isBoolWave)
+            {
+                _Alltimer -= 100;
+            }
+            else
+            {
+                _Alltimer -= 10;
+            }
         }
 
         private void EnemyDie(Enemy enemy)
@@ -50,6 +63,11 @@ namespace moon._01.Script.Manager
             }
             _actionEnemy.Remove(enemy);
             enemy.OnDeadEvent -= EnemyDie;
+            if (_Alltimer - 2 >= 0)
+            {
+                _Alltimer -= 2;
+
+            }
         }
 
         private void OnDestroy()
@@ -62,12 +80,15 @@ namespace moon._01.Script.Manager
 
         private void Update()
         {
+            
+            _Alltimer += Time.deltaTime;
             _timer += Time.deltaTime;
             if (SpawnCount > 0 && _timer >= spawnTime)
             {
                 _timer = 0;
                 SpawnEnemy();
             }
+            fadeScreenManager.SetFade(2.2f-(_Alltimer / 15 * 2.2f));
         }
 
         private void SpawnEnemy()
