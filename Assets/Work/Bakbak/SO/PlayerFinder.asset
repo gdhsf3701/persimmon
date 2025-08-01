@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerFinder
   m_EditorClassIdentifier: 
   _keyType:
-    typeName: 
+    typeName: Player, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   _findAll: 0
