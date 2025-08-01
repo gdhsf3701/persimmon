@@ -18,15 +18,20 @@ namespace moon._01.Script.Manager
         public List<WaveDataListSO> WaveEnemy {get; private set;}
         
         [field: SerializeField]
-        public WaveDataListSO BossEnemy {get; private set;}
+        public int CutSceneMany {get; private set;}
+        [field: SerializeField]
+        public List<WaveDataListSO> BossEnemy {get; private set;}
         public EnemySpawnManager SpawnManager { get; private set; }
         public ScoreManager ScoreManager { get; private set; }
+        
+        
+        public int CutScene { get; private set; } = 1;
 
         public bool AllKillBoss { get; private set; } = false;
 
         public Action OnCutSceneEnd;
 
-        public event Action OnBossScene;
+        public event Action<int> OnBossScene;
 
         public event Action OnGameEndEvent;
 
@@ -49,14 +54,15 @@ namespace moon._01.Script.Manager
         public void NextWave()
         {
             Wave++;
-            if (!AllKillBoss && Wave <= WaveEnemy.Count)
+            if (Wave <= WaveEnemy.Count)
             {
                 var (spawnCount,spawnTime, enemyPrefabs) = GetWaveData();
                 SpawnManager.SetNextWave(spawnCount,spawnTime,enemyPrefabs);
             }
             else
             {
-                OnBossScene?.Invoke();
+                OnBossScene?.Invoke(CutScene - 1);
+                CutScene++;
             }
         }
 
@@ -83,10 +89,10 @@ namespace moon._01.Script.Manager
                 return (waveDataList.EnemySpawnCount, waveDataList.SpawnTime ,waveDataList.EnemyPrefabs);
             }
 
-            if (!AllKillBoss)
+            if (CutSceneMany >= CutScene && BossEnemy.Count >= CutScene)
             {
-                AllKillBoss = true;
-                return (BossEnemy.EnemySpawnCount, BossEnemy.SpawnTime ,BossEnemy.EnemyPrefabs);
+                return (BossEnemy[CutScene - 1].EnemySpawnCount, BossEnemy[CutScene - 1].SpawnTime,
+                    BossEnemy[CutScene - 1].EnemyPrefabs);
             }
 
             OnGameEndEvent?.Invoke();
