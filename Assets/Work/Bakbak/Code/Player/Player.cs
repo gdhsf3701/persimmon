@@ -24,13 +24,13 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
-        animator.SetBool(currentclip, false);
         animator.SetBool("DIE", true);
     }
 
     public void Attack(ShapType type)
     {
-        animator.SetBool(currentclip, false);
+        animator.SetBool("IDLE", false);
+
         switch (type)
         {
             case ShapType.Line:
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
                 newclip = "ATTACKELECK";
                 break;
         }
-        animator.SetBool(newclip, true) ;
+        animator.SetTrigger(newclip) ;
         currentclip = newclip;
     }
 }
