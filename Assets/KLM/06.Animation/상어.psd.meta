@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0743168af3efd684b85a446a6a8d711e
+guid: 86bb1770f6a2a72488b4159af0792c80
 importerOverride:
   nativeImporterType: 2089858483
   scriptedImporterType:
@@ -88,7 +88,7 @@ ScriptedImporter:
       y: 0
       width: 0
       height: 0
-    spriteID: 86a0f31e2ffade248846dbe64a1e2a0f
+    spriteID: aff5eccc8b8a50145a7a4bc530dacd80
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -108,11 +108,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 458
-      width: 196
-      height: 102
-    spriteID: 0a5fdb46015865544b9d5515ae154911
+      x: 669
+      y: 276
+      width: 84
+      height: 78
+    spriteID: 87e0d61d5d33c664989a5218b2fad547
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -120,8 +120,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 458}
-    spritePosition: {x: 396, y: 436}
+    uvTransform: {x: 669, y: 276}
+    spritePosition: {x: 94, y: 456}
+  - name: "\uD314"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 770
+      y: 4
+      width: 228
+      height: 191
+    spriteID: 9a72505016e8d8b439500792ce6afe9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 770, y: 4}
+    spritePosition: {x: 264, y: 296}
   - name: "\uBAB8"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -132,9 +154,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 424
-      height: 446
-    spriteID: ff188e9bd36117b4d89145e0e152ca29
+      width: 758
+      height: 264
+    spriteID: c1ba97f6311d1ce4abff6bddede4cfd0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,7 +165,51 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 279, y: 265}
+    spritePosition: {x: 16, y: 345}
+  - name: "\uAF2C\uB9AC"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 276
+      width: 294
+      height: 367
+    spriteID: 971c9980dcbc2e948bf77603830af483
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 276}
+    spritePosition: {x: 719, y: 344}
+  - name: "\uB4F1"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 306
+      y: 276
+      width: 355
+      height: 135
+    spriteID: d6492402628f3b7428cd139f9684f0f2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 306, y: 276}
+    spritePosition: {x: 212, y: 551}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -162,43 +228,7 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Windows Store Apps
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -219,43 +249,83 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: "\uBD88\uAC00\uC0AC\uB9AC"
+  - name: "\uC0C1\uC5B4"
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: de0c853722de26e4bb96339d90be9bae
+    spriteID: 2070d102e290b8846ba7d76c69cb6893
     layerID: 0
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 1
-  - name: "\uB72C\uB208"
-    spriteName: "\uB72C\uB208"
+  - name: "\uB2E4\uB72C\uB208"
+    spriteName: 
     isGroup: 0
     parentIndex: 0
-    spriteID: 0a5fdb46015865544b9d5515ae154911
-    layerID: -1754138422
-    mosaicPosition: {x: 4, y: 458}
+    spriteID: 6cdebaf1caba83a45ac10c2dcd8b8b35
+    layerID: -1132085130
+    mosaicPosition: {x: 0, y: 0}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: "\uAC10\uC740\uB208"
     spriteName: 
     isGroup: 0
     parentIndex: 0
-    spriteID: 8bd10d2e2d917d44ba8703f8c7b48fa5
+    spriteID: c6f97b2917c89934aa5680db1a6dee71
     layerID: 89623990
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 0
+  - name: "\uB72C\uB208"
+    spriteName: "\uB72C\uB208"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 87e0d61d5d33c664989a5218b2fad547
+    layerID: -1754138422
+    mosaicPosition: {x: 669, y: 276}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\uD314"
+    spriteName: "\uD314"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9a72505016e8d8b439500792ce6afe9c
+    layerID: 372009130
+    mosaicPosition: {x: 770, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: "\uBAB8"
     spriteName: "\uBAB8"
     isGroup: 0
     parentIndex: 0
-    spriteID: ff188e9bd36117b4d89145e0e152ca29
+    spriteID: c1ba97f6311d1ce4abff6bddede4cfd0
     layerID: 371986710
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\uAF2C\uB9AC"
+    spriteName: "\uAF2C\uB9AC"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 971c9980dcbc2e948bf77603830af483
+    layerID: -2056143594
+    mosaicPosition: {x: 4, y: 276}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\uB4F1"
+    spriteName: "\uB4F1"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: d6492402628f3b7428cd139f9684f0f2
+    layerID: 371983181
+    mosaicPosition: {x: 306, y: 276}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -263,7 +333,7 @@ ScriptedImporter:
   rigPSDLayers: []
   sharedRigPSDLayers: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638896559099042140
+  platformSettingsDirtyTick: 0
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
