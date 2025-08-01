@@ -10,7 +10,6 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
 
     [SerializeField]
     private List<ShapType> hearts;
-
     public void ApplyDamage(ShapType shape)
     {
         if(shape == hearts[0])

@@ -103,7 +103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39741e6b44b6604ea4b5b94614e0646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 10
   finder: {fileID: 11400000, guid: 5c61bea77fdf9924695a20406f556707, type: 2}
+  indicater: {fileID: 1323739913196398299, guid: fde75a307dd346a4bbbf7bc80d2ffbe8, type: 3}
 --- !u!114 &5003976635068138324
 MonoBehaviour:
   m_ObjectHideFlags: 0
