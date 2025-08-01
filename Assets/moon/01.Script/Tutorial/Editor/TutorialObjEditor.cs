@@ -89,6 +89,7 @@ namespace moon._01.Script.Tutorial.Editor
             DrawField(ref y, x, w, line, space, parent, nameof(TutorialObj.TextTime));
             DrawField(ref y, x, w, line, space, parent, nameof(TutorialObj.TextDelayTime));
             DrawField(ref y, x, w, line, space, parent, nameof(TutorialObj.EnemyDieToText));
+            DrawField(ref y, x, w, line, space, parent, nameof(TutorialObj.EndToDestroy));
         }
 
         private bool FieldHasTextArea(string fieldName)
@@ -103,7 +104,7 @@ namespace moon._01.Script.Tutorial.Editor
         {
             switch ((TutorialType)enumIndex)
             {
-                case TutorialType.Say: return 4;
+                case TutorialType.Say: return 5;
                 case TutorialType.Enemy: return 3;
                 default: return 0;
             }

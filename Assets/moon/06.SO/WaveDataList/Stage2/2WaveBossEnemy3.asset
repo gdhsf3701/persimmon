@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaa7e8ddb9d4c61a34f4d878a8e10f4, type: 3}
+  m_Name: 2WaveBossEnemy3
+  m_EditorClassIdentifier: 
+  <EnemySpawnCount>k__BackingField: 1
+  <SpawnTime>k__BackingField: 1
+  <EnemyPrefabs>k__BackingField:
+  - {fileID: 1073696236465988380, guid: ada104011740b95458f2e8de5921c8c6, type: 3}
