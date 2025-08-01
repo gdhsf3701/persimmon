@@ -36,7 +36,7 @@ namespace CSI._07_Shader.Fade
             
         
             var tweenCore = _fadeImage.material.DOFloat(clampvalue, _valueHash, _fadeDuration);
-            clampvalue *= 10;
+            clampvalue *= Camera.main.orthographicSize * 2;
             cirle.localScale = new Vector3(clampvalue, clampvalue, clampvalue);
 
         }
