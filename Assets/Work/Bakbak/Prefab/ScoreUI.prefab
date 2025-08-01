@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0245ed9d523076943ac864b4d4dd7e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killtime: 0.5
+  killtime: 5
   Score: {fileID: 1557747814839339299}
   Combo: {fileID: 2425510525490347546}
   canvas: {fileID: 0}
