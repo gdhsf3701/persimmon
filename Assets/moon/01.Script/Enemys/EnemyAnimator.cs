@@ -9,8 +9,10 @@ namespace moon._01.Script.Enemys
         private string _currentAniName;
 
         private Enemy _enemy;
-
         public event Action OnDieAnimationEndEvent;
+        
+        public event Action OnAttackAnimationEndEvent;
+        public event Action OnAttackEvent;
         
         [ContextMenu("Die Ani End")]
         public void AnimationEnd()
@@ -18,8 +20,19 @@ namespace moon._01.Script.Enemys
             OnDieAnimationEndEvent?.Invoke();
         }
 
+        public void AttackAnimationEnd()
+        {
+            OnAttackAnimationEndEvent?.Invoke();
+        }
+
+        public void Attack()
+        {
+            OnAttackEvent?.Invoke();
+        }
+
         public void ChangeAnimation(string aniName)
         {
+            Debug.Log($"ChangeAnimation 호출: 이전[{_currentAniName}] → 새[{aniName}]");
             if(!string.IsNullOrEmpty(_currentAniName))
                animator.SetBool(_currentAniName, false); 
             animator.SetBool(aniName,true);

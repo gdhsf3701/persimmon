@@ -25,7 +25,7 @@ public class HeartCounter : MonoBehaviour
     {
         currentHealth--;
         setUI();
-        if(currentHealth == 0)
+        if(currentHealth <= 0)
         {
             return true;
         }
