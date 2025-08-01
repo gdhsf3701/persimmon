@@ -32,7 +32,6 @@ namespace moon._01.Script.Enemys
 
         public void ChangeAnimation(string aniName)
         {
-            Debug.Log($"ChangeAnimation 호출: 이전[{_currentAniName}] → 새[{aniName}]");
             if(!string.IsNullOrEmpty(_currentAniName))
                animator.SetBool(_currentAniName, false); 
             animator.SetBool(aniName,true);
