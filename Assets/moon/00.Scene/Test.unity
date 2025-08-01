@@ -520,7 +520,7 @@ Animator:
   m_GameObject: {fileID: 363218736}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 536977bee1086094e8751d27ed4e1131, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6479,6 +6479,8 @@ MonoBehaviour:
   killtime: 0.5
   Score: {fileID: 1457065288}
   Combo: {fileID: 237290071}
+  canvas: {fileID: 217757210}
+  shower: {fileID: 1323739913196398299, guid: fde75a307dd346a4bbbf7bc80d2ffbe8, type: 3}
 --- !u!4 &1474122339
 Transform:
   m_ObjectHideFlags: 0
@@ -6658,7 +6660,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
