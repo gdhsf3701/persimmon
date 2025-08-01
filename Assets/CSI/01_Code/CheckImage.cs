@@ -187,6 +187,9 @@ namespace CSI._01_Code
 				case "Eleck":
 					shapType = ShapType.Eleck;
 					break;
+				case "Eleck2":
+					shapType = ShapType.Eleck;
+					break;
 			}
 
 			return shapType;

@@ -9,8 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328ca10e1e81bc64daf71ea15a50ccb7, type: 3}
-  m_Name: SoundListSO
+  m_Script: {fileID: 11500000, guid: 48c32755cef4f784ab6582bd331841f7, type: 3}
+  m_Name: asd
   m_EditorClassIdentifier: 
-  Sounds:
-  - {fileID: 11400000, guid: b16adeb0acabcee46845304ce97af1e8, type: 2}
+  soundName: asd
+  soundType: 1
+  clip: {fileID: 0}
+  loop: 0
+  Priority: 128
+  volume: 1
+  pitch: 1
+  stereoPan: 0
+  SpatialBlend: 0
+  RandomPitch: 0
+  MinPitch: 0.95
+  MaxPitch: 1.05
