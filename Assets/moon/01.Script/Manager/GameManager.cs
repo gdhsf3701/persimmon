@@ -62,13 +62,13 @@ namespace moon._01.Script.Manager
             else
             {
                 OnBossScene?.Invoke(CutScene - 1);
-                CutScene++;
             }
         }
 
         public void SetNextWave()
         {
             var (spawnCount,spawnTime, enemyPrefabs) = GetWaveData();
+            CutScene++;
             SpawnManager.SetNextWave(spawnCount,spawnTime,enemyPrefabs);
         }
 

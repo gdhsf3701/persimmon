@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Trail
+  m_Name: HLineTrail
   m_Shader: {fileID: -6465566751694194690, guid: 42434b33f8473cb48ab7daad4507faad, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,10 +24,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_ccc72f8d45b2440f98e22ed786dd358f_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -45,10 +41,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 4, g: 3.130662, b: 0, a: 1}
+    - _Color: {r: 0.038486477, g: 0, b: 7.999999, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &6729207046880363728
+--- !u!114 &4806213230186650384
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
