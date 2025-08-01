@@ -16,7 +16,7 @@ namespace CSI._07_Shader.Fade
         private void Awake()
         {
             _fadeImage.material = new Material(_fadeImage.material);
-            HandleFadeEvent(2.5f);
+            SetFade(2.5f);
         }
 
         // IEnumerator Start()
@@ -28,7 +28,7 @@ namespace CSI._07_Shader.Fade
         //         HandleFadeEvent(Random.Range(0, 2.2f));
         //     }
         // }
-        private void HandleFadeEvent(float value)
+        public void SetFade(float value)
         {
             float clampvalue = Mathf.Clamp(value, 0, 2.2f);
         

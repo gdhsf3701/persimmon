@@ -412,8 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killtime: 0.5
-  Score: {fileID: 0}
-  Combo: {fileID: 0}
+  Score: {fileID: 1557747814839339299}
+  Combo: {fileID: 2425510525490347546}
   canvas: {fileID: 0}
   shower: {fileID: 0}
 --- !u!1 &4288607789787659824
