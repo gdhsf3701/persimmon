@@ -10,9 +10,10 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
 
     [SerializeField]
     private List<ShapType> hearts;
-
     public void ApplyDamage(ShapType shape)
     {
+        if(owner.IsDead)
+            return;
         if(shape == hearts[0])
         {
             hearts.RemoveAt(0);

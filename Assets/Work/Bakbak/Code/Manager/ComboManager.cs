@@ -15,6 +15,10 @@ public class ComboManager : MonoBehaviour
     private TMP_Text Score;
     [SerializeField]
     private TMP_Text Combo;
+    [SerializeField]
+    private Canvas canvas;
+    [SerializeField]
+    private GameObject shower;
     public void Kill(Enemy enemy)
     {
         combo++;
@@ -24,6 +28,12 @@ public class ComboManager : MonoBehaviour
 
         ShowCombo();
         ShowScore();
+
+        Vector3 Position = Camera.main.WorldToScreenPoint(enemy.transform.position);
+
+        DamageShow damage =
+            Instantiate(shower, Position, Quaternion.identity, canvas.transform).GetComponent<DamageShow>();
+        damage.Show(enemy.Reward);
     }
 
     private void ShowScore()

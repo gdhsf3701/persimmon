@@ -8,6 +8,8 @@ public class EnemyMover : MonoBehaviour, IEntityCompo
     private float moveSpeed;
     void Update()
     {
+        if(owner.IsDead)
+            return;
         transform.position += (Vector3) moveDir * moveSpeed * Time.deltaTime;
     }
 

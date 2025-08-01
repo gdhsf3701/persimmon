@@ -15,5 +15,5 @@ MonoBehaviour:
   <EnemySpawnCount>k__BackingField: 5
   <SpawnTime>k__BackingField: 1.75
   <EnemyPrefabs>k__BackingField:
-  - {fileID: 9043274480003266395, guid: efb617a3f15e9e44e88aa43b59ac2611, type: 3}
-  - {fileID: 7644877135297111850, guid: 088eea59840eaa5498d1afb3aaf57db9, type: 3}
+  - {fileID: 8737549570411922025, guid: 8e65f1839a8ed50409f7ecc1c97b0ea9, type: 3}
+  - {fileID: 1159435863435611524, guid: 83d79688728208741bd632371749796e, type: 3}
