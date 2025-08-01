@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int reward = 10;
 
-    [SerializeField]
     private ScriptFinderSO finder;
     [SerializeField]
     private ParticleSystem particle;
@@ -32,9 +31,14 @@ public class Enemy : MonoBehaviour
     
     public int Reward { get => reward; private set => reward = value; }
 
+    public Player target;
+
+
     [ContextMenu("spawn")]
     public void Spawned()
     {
+        finder = Resources.Load<ScriptFinderSO>("Finder/PlayerFinder");
+        target = finder.GetTarget<Player>();
         SetCompo();
         enemyAnimator.ChangeAnimation("MOVE");
         enemyAnimator.OnDieAnimationEndEvent += DeadAniEnd ;
