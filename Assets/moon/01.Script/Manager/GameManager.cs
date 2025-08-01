@@ -11,28 +11,21 @@ namespace moon._01.Script.Manager
     public class GameManager : MonoBehaviour
     {
         public int Wave { get; private set; } = 1;
-        [SerializeField] private ScriptFinderSO spawnManagerFinder;
-        [SerializeField] private ScriptFinderSO scoreManagerFinder;
-
-        [field: SerializeField]
-        public List<WaveDataListSO> WaveEnemy {get; private set;}
-        
-        [field: SerializeField]
-        public int CutSceneMany {get; private set;}
-        [field: SerializeField]
-        public List<WaveDataListSO> BossEnemy {get; private set;}
-        public EnemySpawnManager SpawnManager { get; private set; }
-        public ScoreManager ScoreManager { get; private set; }
-        
-        
         public int CutScene { get; private set; } = 1;
-
+        public int BossWave { get; private set; } = 1;
         public bool AllKillBoss { get; private set; } = false;
 
-        public Action OnCutSceneEnd;
+        [SerializeField] private ScriptFinderSO spawnManagerFinder;
+        [SerializeField] private ScriptFinderSO scoreManagerFinder;
+        [field: SerializeField] public List<WaveDataListSO> WaveEnemy { get; private set; }
+        [field: SerializeField] public List<WaveDataListSO> BossEnemy { get; private set; }
+        [field: SerializeField] public int CutSceneMany { get; private set; }
+
+        public EnemySpawnManager SpawnManager { get; private set; }
+        public ScoreManager ScoreManager { get; private set; }
 
         public event Action<int> OnBossScene;
-
+        public Action OnCutSceneEnd;
         public event Action OnGameEndEvent;
 
         private void Awake()
@@ -48,7 +41,6 @@ namespace moon._01.Script.Manager
         private void OnDestroy()
         {
             SpawnManager.NextWaveEvent -= NextWave;
-            OnCutSceneEnd -= SetNextWave;
         }
 
         public void NextWave()
@@ -56,47 +48,65 @@ namespace moon._01.Script.Manager
             Wave++;
             if (Wave <= WaveEnemy.Count)
             {
-                var (spawnCount,spawnTime, enemyPrefabs) = GetWaveData();
-                SpawnManager.SetNextWave(spawnCount,spawnTime,enemyPrefabs);
+                var (count, time, prefabs) = GetWaveData();
+                SpawnManager.SetNextWave(count, time, prefabs);
+                return;
             }
-            else
+
+            if (CutScene < CutSceneMany)
             {
                 OnBossScene?.Invoke(CutScene - 1);
+                CutScene++;
+                return;
             }
+
+            SetNextWave();
         }
 
         public void SetNextWave()
         {
-            var (spawnCount,spawnTime, enemyPrefabs) = GetWaveData();
-            CutScene++;
-            SpawnManager.SetNextWave(spawnCount,spawnTime,enemyPrefabs);
+            if (BossWave > BossEnemy.Count)
+            {
+                OnBossScene?.Invoke(CutScene - 1);
+                CutScene++;
+                OnCutSceneEnd -= SetNextWave;
+                _ = GetWaveData();
+                return;
+            }
+
+            var (count, time, prefabs) = GetWaveData();
+            BossWave++;
+            SpawnManager.SetNextWave(count, time, prefabs);
         }
 
         public void ResetWave()
         {
             Wave = 1;
-            var (spawnCount,spawnTime, enemyPrefabs) = GetWaveData();
-            SpawnManager.ResetSpawnManager(spawnCount,spawnTime,enemyPrefabs);
-            ScoreManager.ResetScoreManager();
+            BossWave = 1;
+            CutScene = 1;
             AllKillBoss = false;
+            var (count, time, prefabs) = GetWaveData();
+            SpawnManager.ResetSpawnManager(count, time, prefabs);
+            ScoreManager.ResetScoreManager();
         }
 
-        public (int,float,List<GameObject>) GetWaveData()
+        public (int, float, List<GameObject>) GetWaveData()
         {
             if (Wave <= WaveEnemy.Count)
             {
-                WaveDataListSO waveDataList = WaveEnemy[Wave - 1];
-                return (waveDataList.EnemySpawnCount, waveDataList.SpawnTime ,waveDataList.EnemyPrefabs);
+                WaveDataListSO w = WaveEnemy[Wave - 1];
+                return (w.EnemySpawnCount, w.SpawnTime, w.EnemyPrefabs);
             }
 
-            if (CutSceneMany >= CutScene && BossEnemy.Count >= CutScene)
+            if (BossWave <= BossEnemy.Count)
             {
-                return (BossEnemy[CutScene - 1].EnemySpawnCount, BossEnemy[CutScene - 1].SpawnTime,
-                    BossEnemy[CutScene - 1].EnemyPrefabs);
+                WaveDataListSO b = BossEnemy[BossWave - 1];
+                return (b.EnemySpawnCount, b.SpawnTime, b.EnemyPrefabs);
             }
 
             OnGameEndEvent?.Invoke();
-            return (0, 0, new List<GameObject>());
+            print("end");
+            return (0, 0f, new List<GameObject>());
         }
     }
 }
