@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 1318921978}
   - component: {fileID: 1318921980}
   - component: {fileID: 1318921979}
+  - component: {fileID: 1318921981}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -512,6 +513,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318921977}
   m_CullTransparentMesh: 1
+--- !u!114 &1318921981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318921977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a677b4a42aee18048817ca02365887d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padePanel: {fileID: 1318921979}
+  fadetime: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
