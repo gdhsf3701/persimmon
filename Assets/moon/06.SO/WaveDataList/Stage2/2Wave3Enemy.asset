@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaa7e8ddb9d4c61a34f4d878a8e10f4, type: 3}
+  m_Name: 2Wave3Enemy
+  m_EditorClassIdentifier: 
+  <EnemySpawnCount>k__BackingField: 6
+  <SpawnTime>k__BackingField: 2
+  <EnemyPrefabs>k__BackingField:
+  - {fileID: 1848543591216819678, guid: f4bb19cccdb4a01439c2c171feef10d8, type: 3}
+  - {fileID: 8598425724643935162, guid: 297b1e9d2c6f4b94c94c80953d853164, type: 3}
+  - {fileID: 2993395315887948019, guid: e0ce552334e361341a384deca096abec, type: 3}

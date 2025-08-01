@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffaa7e8ddb9d4c61a34f4d878a8e10f4, type: 3}
-  m_Name: 1WaveBossEnemy
+  m_Name: 1WaveBossEnemy2
   m_EditorClassIdentifier: 
   <EnemySpawnCount>k__BackingField: 1
-  <SpawnTime>k__BackingField: 3
+  <SpawnTime>k__BackingField: 1
   <EnemyPrefabs>k__BackingField:
-  - {fileID: 3593557356212822958, guid: f78f4f3b22de2024ab2001459d349c6a, type: 3}
+  - {fileID: 366980608403307567, guid: 417035bab34621f4db652cfd9ad6efe2, type: 3}

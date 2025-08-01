@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8906516032662436629, guid: bb34a2ef3de97674e83b9d6be875a117, type: 3}
       propertyPath: many
-      value: 1
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8906516032662436629, guid: bb34a2ef3de97674e83b9d6be875a117, type: 3}
       propertyPath: distance
