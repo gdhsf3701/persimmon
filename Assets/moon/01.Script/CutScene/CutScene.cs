@@ -30,8 +30,9 @@ namespace moon._01.Script.CutScene
 
         private void BossSceneHandle(int obj)
         {
+            int aniPar = obj + 1;
             cutSceneAnimator.gameObject.SetActive(true);
-            cutSceneAnimator.PlayAnimator(obj.ToString());
+            cutSceneAnimator.PlayAnimator(aniPar.ToString());
         }
     }
 }

@@ -18,6 +18,8 @@ namespace moon._01.Script.CutScene
             _currentAnimationName = name;
         }
         
+        
+        [ContextMenu("ani end")]
         public void EndAnimation()
         {
             if(!string.IsNullOrEmpty(_currentAnimationName))
