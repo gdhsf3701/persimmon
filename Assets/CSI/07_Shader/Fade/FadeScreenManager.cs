@@ -19,15 +19,15 @@ namespace CSI._07_Shader.Fade
             HandleFadeEvent(2.5f);
         }
 
-        IEnumerator Start()
-        {
-            var wait = new WaitForSeconds(5);
-            while (true)
-            {
-                yield return wait;
-                HandleFadeEvent(Random.Range(0, 2.2f));
-            }
-        }
+        // IEnumerator Start()
+        // {
+        //     var wait = new WaitForSeconds(5);
+        //     while (true)
+        //     {
+        //         yield return wait;
+        //         HandleFadeEvent(Random.Range(0, 2.2f));
+        //     }
+        // }
         private void HandleFadeEvent(float value)
         {
             float clampvalue = Mathf.Clamp(value, 0, 2.2f);
@@ -36,7 +36,7 @@ namespace CSI._07_Shader.Fade
             
         
             var tweenCore = _fadeImage.material.DOFloat(clampvalue, _valueHash, _fadeDuration);
-            clampvalue *= 10;
+            clampvalue *= Camera.main.orthographicSize * 2;
             cirle.localScale = new Vector3(clampvalue, clampvalue, clampvalue);
 
         }

@@ -25,6 +25,7 @@ namespace moon._01.Script.Tutorial
         public bool EnemyDieToText;
         public float TextTime;
         public float TextDelayTime;
+        public bool EndToDestroy;
 
         //Enemy
         public GameObject EnemyPrefab;
@@ -75,21 +76,25 @@ namespace moon._01.Script.Tutorial
 
         private async Task HandleText(TutorialObj obj)
         {
-            text.text = "";
-
             if (!obj.EnemyDieToText)
             {
+                text.text = "";
                 await text.DOText(obj.SayText, obj.TextTime).SetEase(Ease.Linear).AsyncWaitForCompletion();
             }
             else
             {
                 while (!_enemyDied)
                     await Task.Delay(200);
-
+                text.text = "";
                 await text.DOText(obj.SayText, obj.TextTime).SetEase(Ease.Linear).AsyncWaitForCompletion();
             }
 
             await Task.Delay((int)(obj.TextDelayTime * 1000));
+
+            if (obj.EndToDestroy)
+            {
+                text.text = "";
+            }
         }
 
         private async Task HandleEnemy(TutorialObj obj)

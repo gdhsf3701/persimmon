@@ -1,0 +1,283 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6452848334443242420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2736380583137849854}
+  - component: {fileID: 5040565649033600137}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2736380583137849854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452848334443242420}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5040565649033600137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452848334443242420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e7bfd85f2c55a4790429fcaaad2f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tutorial:
+  - TutorialType: 1
+    SayText: hi this tutorial make your game easy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 0}
+    SpawnPointInt: 0
+    EnemyStopTime: 0
+  - TutorialType: 0
+    SayText: hi this tutorial make your game easy
+    EnemyDieToText: 0
+    TextTime: 3
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 9adbda42b5083974296c92ef09d8d944, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: this Enemy Draw Line to Can Kill
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 9adbda42b5083974296c92ef09d8d944, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: goodjob
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 9adbda42b5083974296c92ef09d8d944, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 0
+    SayText: goodjob
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: f680896cf33fdc94aa56709856222bdc, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: this Enemy Can Kill draw Line
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: f680896cf33fdc94aa56709856222bdc, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: goodjob
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: f680896cf33fdc94aa56709856222bdc, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 0
+    SayText: goodjob
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: good
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 0
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 14355947b40ae4a42a3b22fd12a5667b, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: good
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 0
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 3279e891a37744041a8094da61c38ad2, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: good
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 0
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: f81640cd696be9249b934079e8faf2d9, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: good
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 0
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: aadf4e12c8b0d8a4ea8b660f213f1a43, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: "good\t"
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 0
+    SayText: this Enemy
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 7174237e81642384c8563de274b8fb4f, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: last
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: good
+    EnemyDieToText: 1
+    TextTime: 1
+    TextDelayTime: 0.5
+    EndToDestroy: 1
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  - TutorialType: 1
+    SayText: you all done sfsfsfsfsfsfsfsfsfsfs
+    EnemyDieToText: 0
+    TextTime: 2
+    TextDelayTime: 1
+    EndToDestroy: 0
+    EnemyPrefab: {fileID: 6727436193429438903, guid: 5c2e199c65243d147b391357a54f68b0, type: 3}
+    SpawnPointInt: 0
+    EnemyStopTime: 2
+  gameManagerFinder: {fileID: 11400000, guid: 6f45983ce5c375f4e93b9328e3c22aef, type: 2}
+  text: {fileID: 0}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +12,7 @@ namespace moon._01.Script.Manager
         [SerializeField] private int many;
         [SerializeField] private float spawnTime;
         private List<GameObject> _enemyPrefabs = new List<GameObject>();
+        
         private float _timer = 0;
         private int _enemyCount = 0;
 
