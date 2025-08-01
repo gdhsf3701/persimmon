@@ -1,5 +1,7 @@
 using Plugins.ScriptFinder.RunTime.Finder;
 using System;
+using System.Threading.Tasks;
+using moon._01.Script.Enemys;
 using UnityEngine;
 using UnityEngine.Events;
 using Work.Bakbak.Code.Shape;
@@ -11,6 +13,8 @@ public class Enemy : MonoBehaviour
 
     private IEntityCompo[] Compos;
 
+    [SerializeField] private EnemyAnimator enemyAnimator;
+
     [SerializeField]
     private int reward = 10;
 
@@ -21,13 +25,24 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private GameObject indicater;
+
+    private bool _dieAniEnd = false;
+
+    public bool IsDead { get; private set; } = false;
+    
     public int Reward { get => reward; private set => reward = value; }
 
     [ContextMenu("spawn")]
     public void Spawned()
     {
         SetCompo();
-        OnDeadEvent += finder.GetTarget<ComboManager>().Kill;
+        enemyAnimator.ChangeAnimation("MOVE");
+        enemyAnimator.OnDieAnimationEndEvent += DeadAniEnd ;
+    }
+
+    private void DeadAniEnd()
+    {
+        _dieAniEnd = true;
     }
 
     private void SetCompo()
@@ -39,17 +54,36 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void OnDead()
+    public async Task OnDead()
     {
-        OnDeadEvent?.Invoke(this);
-        OnDeadEvent -= finder.GetTarget<ComboManager>().Kill;
+        if(IsDead)
+            return;
+        IsDead = true;
         particle.Play();
-
+        
+        enemyAnimator.ChangeAnimation("DEAD");
+        
+        finder.GetTarget<ComboManager>().Kill(this);
+        
+        await WaitToDeadAniEnd();
+        
+        OnDeadEvent?.Invoke(this);
+        
         foreach (IEntityCompo compo in Compos)
         {
             compo.Desolve();
         }
-
+        enemyAnimator.OnDieAnimationEndEvent -= DeadAniEnd;
         Destroy(gameObject);
+    }
+
+    private async Task WaitToDeadAniEnd()
+    {
+        while (true)
+        {
+            if (_dieAniEnd)
+                break;
+            await Task.Delay(200);
+        }
     }
 }
