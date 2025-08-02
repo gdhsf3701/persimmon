@@ -134,7 +134,7 @@ namespace CSI._01_Code
 				Gesture candidate = new Gesture(points.ToArray());
 				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
-				if (gestureResult.Score > 0.7f)
+				if (gestureResult.Score > 0.6f)
 				{
 					Debug.Log(gestureResult.GestureClass + " " + gestureResult.Score);
 					DrawedEvent?.Invoke(StringToShapType(gestureResult.GestureClass));
