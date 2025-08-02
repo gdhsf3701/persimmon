@@ -83,12 +83,12 @@ public class Enemy : MonoBehaviour
 
     private void AttackEnd()
     {
-        /*_timer = attackCoolTime;
-        isAttacking = false;*/
+        _timer = attackCoolTime;
+        isAttacking = false;
         if(IsDead)
            return;
-        OnDead();
-        /*enemyAnimator.ChangeAnimation("MOVE");*/
+        //OnDead();
+        enemyAnimator.ChangeAnimation("MOVE");
     }
 
 
