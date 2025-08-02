@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaa7e8ddb9d4c61a34f4d878a8e10f4, type: 3}
+  m_Name: 4Wave4Enemy
+  m_EditorClassIdentifier: 
+  <EnemySpawnCount>k__BackingField: 10
+  <SpawnTime>k__BackingField: 1.5
+  <EnemyPrefabs>k__BackingField:
+  - {fileID: 8178995296051231364, guid: 62a640324876bab4a8d0df6eed1f2327, type: 3}
+  - {fileID: 8486846192434551591, guid: 45e03cd17391992408bfd66a9e59817e, type: 3}
+  - {fileID: 7208928250335449320, guid: 1da12b53ffbf09646af10884b63e484e, type: 3}

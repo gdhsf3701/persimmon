@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6009495872240345748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41772674026925867, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728758751189428512, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636752136220889464, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636752136220889464, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: 'hearts.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636752136220889464, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: 'hearts.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636752136220889464, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: 'hearts.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859701076642918160, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
+      propertyPath: m_Name
+      value: StarFish3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3df4074f953df8b4e88aaa47c3d38892, type: 3}
