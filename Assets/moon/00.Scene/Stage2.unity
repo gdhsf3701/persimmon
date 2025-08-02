@@ -1090,6 +1090,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 805395895877504407, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
   m_PrefabInstance: {fileID: 979447602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &979447604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2425510525490347546, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
+  m_PrefabInstance: {fileID: 979447602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &979447605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1557747814839339299, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
+  m_PrefabInstance: {fileID: 979447602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1073166513
 GameObject:
   m_ObjectHideFlags: 0
@@ -6300,8 +6322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killtime: 0.5
-  Score: {fileID: 0}
-  Combo: {fileID: 0}
+  Score: {fileID: 979447605}
+  Combo: {fileID: 979447604}
   canvas: {fileID: 217757210}
   shower: {fileID: 1323739913196398299, guid: fde75a307dd346a4bbbf7bc80d2ffbe8, type: 3}
 --- !u!4 &1474122339
@@ -6706,6 +6728,10 @@ PrefabInstance:
     - target: {fileID: 2199305947475658928, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
       propertyPath: nextScene
       value: Stage3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199305947475658928, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
+      propertyPath: <CutSceneMany>k__BackingField
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3898172044031433369, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
       propertyPath: m_Name
