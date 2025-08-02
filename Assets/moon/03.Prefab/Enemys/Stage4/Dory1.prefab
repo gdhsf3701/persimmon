@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 6e4c5f51d6799384ba5ff9794eaa49c4, type: 3}
       propertyPath: m_Name
-      value: "\uB3C4\uB9AC2 1"
+      value: "\uB3C4\uB9AC2"
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6e4c5f51d6799384ba5ff9794eaa49c4, type: 3}
       propertyPath: m_LocalPosition.x

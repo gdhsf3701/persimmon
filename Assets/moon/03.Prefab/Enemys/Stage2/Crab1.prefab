@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crab1
       objectReference: {fileID: 0}
+    - target: {fileID: 6490354375375886164, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.06
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

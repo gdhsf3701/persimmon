@@ -111,6 +111,7 @@ namespace moon._01.Script.Manager
 
             OnGameEndEvent?.Invoke();
             print("end");
+            Padeinout._instance.PadeIn("Stage2");
             return (0, 0f, new List<GameObject>());
         }
     }
