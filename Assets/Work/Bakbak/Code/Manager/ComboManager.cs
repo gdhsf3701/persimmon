@@ -35,6 +35,7 @@ public class ComboManager : MonoBehaviour
         /*DamageShow damage =
             Instantiate(shower, Position, Quaternion.identity, canvas.transform).GetComponent<DamageShow>();
         damage.Show(enemy.Reward);*/
+        lastKillTime = Time.time;
     }
 
     private void ShowScore()
@@ -44,10 +45,10 @@ public class ComboManager : MonoBehaviour
 
     private IEnumerator ShowScore(int targetScore)
     {
-        int currentvalue = (int)targetScore / 2;
-        while(currentvalue <= targetScore)
+        int currentvalue = targetScore / 2;
+        while(currentvalue < targetScore-1)
         {
-            currentvalue = (int)(targetScore + currentvalue) / 2;
+            currentvalue = (targetScore + currentvalue) / 2;
             Score.SetText(currentvalue.ToString());
             yield return null;
         }
@@ -62,7 +63,7 @@ public class ComboManager : MonoBehaviour
 
     private void Update()
     {
-        if(lastKillTime + killtime > killtime)
+        if(lastKillTime + killtime < Time.time)
         {
             combo = 0;
             ShowCombo();

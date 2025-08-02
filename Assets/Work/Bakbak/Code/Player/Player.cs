@@ -1,5 +1,6 @@
 using Plugins.ScriptFinder.RunTime.Finder;
 using System;
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using Work.Bakbak.Code.Shape;
 
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
         if(died )
         {
             Death();
+            SoundManager.Instance.PlaySound("OverBGM");
         }
     }
 

@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4822289151875102407, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
+      propertyPath: nextScene
+      value: Stage5
+      objectReference: {fileID: 0}
     - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
       propertyPath: many
       value: 14
@@ -261,6 +265,14 @@ PrefabInstance:
     - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
       propertyPath: distance
       value: 18.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
+      propertyPath: isUpSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
+      propertyPath: isSildeSpawn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
       propertyPath: fadeScreenManager

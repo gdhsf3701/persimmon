@@ -1,3 +1,4 @@
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ namespace moon._01.Script
 
         public void GoTitleToBtn()
         {
+            SoundManager.Instance.PlaySound("ButtonSFX");
             SceneManager.LoadScene(titleName);
         }
     }
