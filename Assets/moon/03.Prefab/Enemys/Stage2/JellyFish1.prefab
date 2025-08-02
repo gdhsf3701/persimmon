@@ -52,6 +52,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5602740911968263873, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5602740911968263873, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
+    - target: {fileID: -3451337215694431727, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -3451337215694431727, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
+    - target: {fileID: 55558899607630971, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 55558899607630971, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
+    - target: {fileID: 623563294182349763, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 623563294182349763, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005799031522573885, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005799031522573885, guid: a20358343b575d647962de7997fbec7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

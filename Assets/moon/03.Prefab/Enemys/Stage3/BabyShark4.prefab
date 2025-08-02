@@ -48,9 +48,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 583407411493969127, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 583407411493969127, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372381232039056585, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372381232039056585, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845768395469846052, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845768395469846052, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
     - target: {fileID: 3956181757088929208, guid: e2270b5df6433684990caea3038efe5c, type: 3}
       propertyPath: moveSpeed
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243199704197859747, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243199704197859747, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
       objectReference: {fileID: 0}
     - target: {fileID: 4972279157537254880, guid: e2270b5df6433684990caea3038efe5c, type: 3}
       propertyPath: hearts.Array.size
@@ -71,6 +103,22 @@ PrefabInstance:
     - target: {fileID: 5055634098980033416, guid: e2270b5df6433684990caea3038efe5c, type: 3}
       propertyPath: m_Name
       value: BabyShark4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351517601819403494, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351517601819403494, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688588574080816160, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688588574080816160, guid: e2270b5df6433684990caea3038efe5c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -96587115
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
