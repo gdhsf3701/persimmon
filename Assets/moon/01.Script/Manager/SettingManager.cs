@@ -25,7 +25,7 @@ namespace moon._01.Script.Manager
 
         public void StartGame()
         {
-            const string gameSceneName = "Stage1";
+            const string gameSceneName = "Tutorial";
             SceneManager.LoadScene(gameSceneName);
         }
 
