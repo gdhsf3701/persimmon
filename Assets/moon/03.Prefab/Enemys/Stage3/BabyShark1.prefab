@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 65589461325955661, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.32
+      objectReference: {fileID: 0}
     - target: {fileID: 413442459807055111, guid: 115575bd022ab3d4381fd9c7c8e96a35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -107,7 +111,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: dfc388078684766489e7e74a29ae5c98, type: 3}
       propertyPath: m_Name
-      value: "\uC544\uAE30\uC0C1\uC5B42 (1)"
+      value: BabyShark
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: dfc388078684766489e7e74a29ae5c98, type: 3}
       propertyPath: m_LocalPosition.x

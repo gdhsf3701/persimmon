@@ -82,7 +82,7 @@ namespace moon._01.Script.Manager
         private void Update()
         {
             
-            _Alltimer += Time.deltaTime;
+            _Alltimer += Time.deltaTime/1.5f;
             _timer += Time.deltaTime;
             if (SpawnCount > 0 && _timer >= spawnTime)
             {

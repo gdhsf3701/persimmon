@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
         target = PlayerFinder.GetTarget<Player>();
         SetCompo();
         enemyAnimator.ChangeAnimation("MOVE");
-        enemyAnimator.OnDieAnimationEndEvent += DeadAniEnd;
+        enemyAnimator.OnDieAnimationEndEvent += OnDeadAfter;
         enemyAnimator.OnAttackAnimationEndEvent += AttackEnd;
         enemyAnimator.OnAttackEvent += AttackPlayer;
         enemyMover.OnAttackEvent += Attack;
@@ -83,17 +83,14 @@ public class Enemy : MonoBehaviour
 
     private void AttackEnd()
     {
-        _timer = attackCoolTime;
-        isAttacking = false;
+        /*_timer = attackCoolTime;
+        isAttacking = false;*/
         if(IsDead)
            return;
-        enemyAnimator.ChangeAnimation("MOVE");
+        OnDead();
+        /*enemyAnimator.ChangeAnimation("MOVE");*/
     }
 
-    private void DeadAniEnd()
-    {
-        _dieAniEnd = true;
-    }
 
     private void SetCompo()
     {
@@ -104,7 +101,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public async Task OnDead()
+    public void OnDead()
     {
         if(IsDead)
             return;
@@ -119,25 +116,21 @@ public class Enemy : MonoBehaviour
         
         enemyAnimator.OnAttackAnimationEndEvent -= AttackEnd;
         
-        await WaitToDeadAniEnd();
-        
+    }
+
+    public void OnDeadAfter()
+    {
         OnDeadEvent?.Invoke(this);
         
         foreach (IEntityCompo compo in Compos)
         {
             compo.Desolve();
         }
-        enemyAnimator.OnDieAnimationEndEvent -= DeadAniEnd;
         Destroy(gameObject);
     }
 
-    private async Task WaitToDeadAniEnd()
+    private void OnDestroy()
     {
-        while (true)
-        {
-            if (_dieAniEnd)
-                break;
-            await Task.Delay(200);
-        }
+        enemyAnimator.OnDieAnimationEndEvent -= OnDeadAfter;
     }
 }

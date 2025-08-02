@@ -27,6 +27,7 @@ namespace moon._01.Script.Manager
         public event Action<int> OnBossScene;
         public Action OnCutSceneEnd;
         public event Action OnGameEndEvent;
+        public string nextScene;
 
         private void Awake()
         {
@@ -111,6 +112,7 @@ namespace moon._01.Script.Manager
 
             OnGameEndEvent?.Invoke();
             print("end");
+            Padeinout._instance.PadeIn(nextScene);
             return (0, 0f, new List<GameObject>());
         }
     }
