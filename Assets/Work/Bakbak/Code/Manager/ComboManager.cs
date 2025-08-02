@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -20,6 +21,13 @@ public class ComboManager : MonoBehaviour
     private Canvas canvas;
     [SerializeField]
     private GameObject shower;
+
+    private void Start()
+    {
+        score = DataBase.Instance.GetPoint();
+        Score.SetText(score.ToString());
+    }
+
     public void Kill(Enemy enemy)
     {
         combo++;
@@ -68,5 +76,10 @@ public class ComboManager : MonoBehaviour
             combo = 0;
             ShowCombo();
         }
+    }
+
+    private void OnDestroy()
+    {
+        DataBase.Instance.SetPoint(score);
     }
 }

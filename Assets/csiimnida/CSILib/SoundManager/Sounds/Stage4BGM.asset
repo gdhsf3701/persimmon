@@ -15,7 +15,7 @@ MonoBehaviour:
   soundName: Stage4BGM
   soundType: 0
   clip: {fileID: 8300000, guid: b8ee0ce8f0cb0054ba45d0e1391a9874, type: 3}
-  loop: 0
+  loop: 1
   Priority: 128
   volume: 1
   pitch: 1

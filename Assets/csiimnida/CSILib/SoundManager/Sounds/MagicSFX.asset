@@ -21,6 +21,6 @@ MonoBehaviour:
   pitch: 1
   stereoPan: 0
   SpatialBlend: 0
-  RandomPitch: 0
-  MinPitch: 0.95
-  MaxPitch: 1.05
+  RandomPitch: 1
+  MinPitch: 0.9
+  MaxPitch: 1.25

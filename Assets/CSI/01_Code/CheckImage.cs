@@ -94,7 +94,7 @@ namespace CSI._01_Code
 					if (vertexCount <= 0 || drowingTime < 5) return;
 					Gesture candidate = new Gesture(points.ToArray());
 					Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
-					ShapeSO shapType = GetShapeSo(StringToShapType(gestureResult.GestureClass));
+					ShapeSO shapType = GetShapeSo(StringToShapType(gestureResult.GestureClass,false));
 					Vector3 pos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
 					if (particleSystem.isPlaying == false)
 					{
@@ -162,43 +162,46 @@ namespace CSI._01_Code
 			GestureIO.WriteGesture(points.ToArray(), newGestureName, fileName);
 		}
 
-		private ShapType StringToShapType(string shape)
+		private ShapType StringToShapType(string shape,bool PlaySound = true)
 		{
 			ShapType shapType = ShapType.HLine;
 			switch (shape)
 			{
 				case "HLine":
 					shapType = ShapType.HLine;
-					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "Line":
 					shapType = ShapType.Line;
-					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "O":
 					shapType = ShapType.Circle;
-					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "star":
 					shapType = ShapType.Star;
-					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "UnderCheck":
 					shapType = ShapType.UnderCheck;
-					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "UperCheck":
 					shapType = ShapType.UpperCheck;
-					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "Eleck":
 					shapType = ShapType.Eleck;
-					SoundManager.Instance.PlaySound("ThunderSFX");
 					break;
 				case "Eleck2":
 					shapType = ShapType.Eleck;
-					SoundManager.Instance.PlaySound("ThunderSFX");
 					break;
+			}
+
+			if (PlaySound)
+			{
+				if(shapType == ShapType.Eleck)
+					SoundManager.Instance.PlaySound("ThunderSFX");
+				else
+				{
+					
+					SoundManager.Instance.PlaySound("MagicSFX");
+				}
 			}
 
 			return shapType;
