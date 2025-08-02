@@ -1051,6 +1051,7 @@ MonoBehaviour:
   _fadeImage: {fileID: 1073166516}
   cirle: {fileID: 1879724392}
   _fadeDuration: 0.5
+  isTutorial: 0
 --- !u!114 &1073166516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6081,55 +6082,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1474122337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1474122339}
-  - component: {fileID: 1474122338}
-  m_Layer: 0
-  m_Name: ComboManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1474122338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474122337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0245ed9d523076943ac864b4d4dd7e8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killtime: 0.5
-  Score: {fileID: 0}
-  Combo: {fileID: 0}
-  canvas: {fileID: 0}
-  shower: {fileID: 1323739913196398299, guid: fde75a307dd346a4bbbf7bc80d2ffbe8, type: 3}
---- !u!4 &1474122339
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474122337}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1637916144
 GameObject:
   m_ObjectHideFlags: 0
@@ -6561,7 +6513,6 @@ SceneRoots:
   - {fileID: 1879724392}
   - {fileID: 1194163111}
   - {fileID: 1089970213}
-  - {fileID: 1474122339}
   - {fileID: 1899777625}
   - {fileID: 443551708}
   - {fileID: 18467177}

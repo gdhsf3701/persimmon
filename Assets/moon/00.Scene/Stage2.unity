@@ -1090,28 +1090,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 805395895877504407, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
   m_PrefabInstance: {fileID: 979447602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &979447604 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2425510525490347546, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
-  m_PrefabInstance: {fileID: 979447602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &979447605 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1557747814839339299, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
-  m_PrefabInstance: {fileID: 979447602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1073166513
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,55 +6270,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1474122337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1474122339}
-  - component: {fileID: 1474122338}
-  m_Layer: 0
-  m_Name: ComboManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1474122338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474122337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0245ed9d523076943ac864b4d4dd7e8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killtime: 0.5
-  Score: {fileID: 979447605}
-  Combo: {fileID: 979447604}
-  canvas: {fileID: 217757210}
-  shower: {fileID: 1323739913196398299, guid: fde75a307dd346a4bbbf7bc80d2ffbe8, type: 3}
---- !u!4 &1474122339
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474122337}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1637916144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7028,7 +6957,6 @@ SceneRoots:
   - {fileID: 1879724392}
   - {fileID: 1194163111}
   - {fileID: 1089970213}
-  - {fileID: 1474122339}
   - {fileID: 1148118890}
   - {fileID: 1248644260}
   - {fileID: 1916972020}
