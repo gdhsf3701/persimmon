@@ -17,6 +17,7 @@ namespace moon._01.Script.Manager
         [SerializeField] private bool isSildeSpawn = false;
         [SerializeField] private bool isTutorial;
         private bool isSpawnedBoss = false;
+        private bool is2Stage = false;
         private List<GameObject> _enemyPrefabs = new List<GameObject>();
         
         private float _timer = 0;
@@ -89,8 +90,15 @@ namespace moon._01.Script.Manager
 
         private void Update()
         {
-            
-            _Alltimer += Time.deltaTime/1f;
+
+            if (is2Stage)
+            {
+                _Alltimer += Time.deltaTime/0.8f;
+            }
+            else
+            {
+                _Alltimer += Time.deltaTime/1f;
+            }
             _timer += Time.deltaTime;
             if (SpawnCount > 0 && _timer >= spawnTime)
             {
