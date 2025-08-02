@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using csiimnida.CSILib.SoundManager.RunTime;
 using PDollar_drowingTool.Scripts;
 using PDollarGestureRecognizer;
 using UnityEngine;
@@ -168,27 +169,35 @@ namespace CSI._01_Code
 			{
 				case "HLine":
 					shapType = ShapType.HLine;
+					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "Line":
 					shapType = ShapType.Line;
+					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "O":
 					shapType = ShapType.Circle;
+					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "star":
 					shapType = ShapType.Star;
+					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "UnderCheck":
 					shapType = ShapType.UnderCheck;
+					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "UperCheck":
 					shapType = ShapType.UpperCheck;
+					SoundManager.Instance.PlaySound("MagicSFX");
 					break;
 				case "Eleck":
 					shapType = ShapType.Eleck;
+					SoundManager.Instance.PlaySound("ThunderSFX");
 					break;
 				case "Eleck2":
 					shapType = ShapType.Eleck;
+					SoundManager.Instance.PlaySound("ThunderSFX");
 					break;
 			}
 
