@@ -15,6 +15,7 @@ namespace moon._01.Script.Manager
         [SerializeField] private FadeScreenManager fadeScreenManager;
         [SerializeField] private bool isUpSpawn = false;
         [SerializeField] private bool isSildeSpawn = false;
+        [SerializeField] private bool isTutorial;
         private bool isSpawnedBoss = false;
         private List<GameObject> _enemyPrefabs = new List<GameObject>();
         
@@ -96,7 +97,8 @@ namespace moon._01.Script.Manager
                 _timer = 0;
                 SpawnEnemy();
             }
-            fadeScreenManager.SetFade(2.2f-(_Alltimer / 15 * 2.2f));
+            if(!isTutorial)
+                fadeScreenManager.SetFade(2.2f-(_Alltimer / 15 * 2.2f));
         }
 
         private void SpawnEnemy()
