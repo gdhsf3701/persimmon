@@ -24,6 +24,8 @@ namespace moon._01.Script.Manager
         public EnemySpawnManager SpawnManager { get; private set; }
         public ScoreManager ScoreManager { get; private set; }
 
+        [field: SerializeField] private bool isTutorial;
+
         public event Action<int> OnBossScene;
         public Action OnCutSceneEnd;
         public event Action OnGameEndEvent;
@@ -36,7 +38,8 @@ namespace moon._01.Script.Manager
             ScoreManager.Initialize(this);
             SpawnManager.NextWaveEvent += NextWave;
             OnCutSceneEnd += SetNextWave;
-            ResetWave();
+            if (!isTutorial)
+                ResetWave();
         }
 
         private void OnDestroy()
