@@ -1,5 +1,6 @@
 using Plugins.ScriptFinder.RunTime.Finder;
 using System;
+using CSI._01_Code;
 using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using Work.Bakbak.Code.Shape;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
+        CheckImage.Instance.gameObject.SetActive(false);
         animator.SetBool("IDLE", false);
         animator.SetBool("DIE", true);
     }
