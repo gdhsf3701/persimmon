@@ -32,9 +32,9 @@ public class ComboManager : MonoBehaviour
 
         Vector3 Position = Camera.main.WorldToScreenPoint(enemy.transform.position);
 
-        DamageShow damage =
+        /*DamageShow damage =
             Instantiate(shower, Position, Quaternion.identity, canvas.transform).GetComponent<DamageShow>();
-        damage.Show(enemy.Reward);
+        damage.Show(enemy.Reward);*/
         lastKillTime = Time.time;
     }
 

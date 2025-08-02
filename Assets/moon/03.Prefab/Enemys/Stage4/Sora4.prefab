@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3025886992829519598, guid: 3323af69f6477454c91994798724805a, type: 3}
       propertyPath: m_Name
-      value: Sora1 Variant
+      value: Sora4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086709372069128326, guid: 3323af69f6477454c91994798724805a, type: 3}
+      propertyPath: hearts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086709372069128326, guid: 3323af69f6477454c91994798724805a, type: 3}
+      propertyPath: 'hearts.Array.data[1]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426647687402098910, guid: 3323af69f6477454c91994798724805a, type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7645797525521635029, guid: 3323af69f6477454c91994798724805a, type: 3}
       propertyPath: m_LocalPosition.x

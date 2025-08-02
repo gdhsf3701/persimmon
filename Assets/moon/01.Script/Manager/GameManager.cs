@@ -27,6 +27,7 @@ namespace moon._01.Script.Manager
         public event Action<int> OnBossScene;
         public Action OnCutSceneEnd;
         public event Action OnGameEndEvent;
+        public string nextScene;
 
         private void Awake()
         {
@@ -85,9 +86,14 @@ namespace moon._01.Script.Manager
             BossWave = 1;
             CutScene = 1;
             AllKillBoss = false;
+            ScoreManager.ResetScoreManager();
+            if (!(Wave <= WaveEnemy.Count) && BossWave <= BossEnemy.Count)
+            {
+                NextWave();
+                return;
+            }
             var (count, time, prefabs) = GetWaveData();
             SpawnManager.ResetSpawnManager(count, time, prefabs);
-            ScoreManager.ResetScoreManager();
         }
 
         public (int, float, List<GameObject>) GetWaveData()
@@ -106,6 +112,7 @@ namespace moon._01.Script.Manager
 
             OnGameEndEvent?.Invoke();
             print("end");
+            Padeinout._instance.PadeIn(nextScene);
             return (0, 0f, new List<GameObject>());
         }
     }

@@ -10,7 +10,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3750922999018020483, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
       propertyPath: m_Name
-      value: Kraken1 Variant
+      value: Kraken2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973821363652092139, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
+      propertyPath: 'hearts.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973821363652092139, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
+      propertyPath: 'hearts.Array.data[2]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973821363652092139, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
+      propertyPath: 'hearts.Array.data[4]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973821363652092139, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
+      propertyPath: 'hearts.Array.data[5]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973821363652092139, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
+      propertyPath: 'hearts.Array.data[6]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973821363652092139, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
+      propertyPath: 'hearts.Array.data[7]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955053250285656243, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
+      propertyPath: moveSpeed
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8640363689034964664, guid: 1d94bc1f6aff40a428044e07d11e4a20, type: 3}
       propertyPath: m_LocalPosition.x

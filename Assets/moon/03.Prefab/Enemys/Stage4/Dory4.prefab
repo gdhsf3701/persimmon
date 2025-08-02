@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1749025802894594167, guid: 61cda92c885afb14fafe5e69a5152c73, type: 3}
+      propertyPath: 'hearts.Array.data[1]'
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1976486854498643487, guid: 61cda92c885afb14fafe5e69a5152c73, type: 3}
       propertyPath: m_Name
-      value: Dory1 (1) Variant
+      value: Dory4
       objectReference: {fileID: 0}
     - target: {fileID: 6379538218870500900, guid: 61cda92c885afb14fafe5e69a5152c73, type: 3}
       propertyPath: m_LocalPosition.x

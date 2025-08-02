@@ -50,8 +50,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5485821215156018390, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: m_Name
-      value: System Variant
+      value: Stage4System
       objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: <BossEnemy>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: <WaveEnemy>k__BackingField.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<BossEnemy>k__BackingField.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e7d87939c6d29640842f81e80f6a858, type: 2}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<BossEnemy>k__BackingField.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9abb9047256352a479b6979fe60b5552, type: 2}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<BossEnemy>k__BackingField.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b604a8403349c147805225e38487365, type: 2}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<WaveEnemy>k__BackingField.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 623aeab32b171154cabc16c88972b55d, type: 2}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<WaveEnemy>k__BackingField.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a795a2cae45d044a9d9e3922d7cfede, type: 2}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<WaveEnemy>k__BackingField.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e87469fe75540c24384630b03229bd86, type: 2}
+    - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
+      propertyPath: '<WaveEnemy>k__BackingField.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a6cd101a2afdbd46aede33106a21ec6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
