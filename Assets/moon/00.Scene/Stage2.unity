@@ -6711,8 +6711,16 @@ PrefabInstance:
       value: Stage2System
       objectReference: {fileID: 0}
     - target: {fileID: 4474700356445739413, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
+      propertyPath: many
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474700356445739413, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
       propertyPath: distance
-      value: 20.46
+      value: 14.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474700356445739413, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
+      propertyPath: spawnTime
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4474700356445739413, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
       propertyPath: fadeScreenManager

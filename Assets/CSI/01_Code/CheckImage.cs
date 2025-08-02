@@ -41,7 +41,20 @@ namespace CSI._01_Code
 		[SerializeField] private ShapeSO eleck;
 		
 		ParticleSystem.MainModule main;
-    
+		public static CheckImage Instance = null;
+
+		private void Awake()
+		{
+			if (Instance == null)
+			{
+				Instance = this;
+            
+			}
+			else
+			{
+				Destroy(gameObject);
+			}
+		}
 		void Start()
 		{
 			main = particleSystem.main;
@@ -256,6 +269,10 @@ namespace CSI._01_Code
 				}
 			);
 			currentGestureLineRenderer.colorGradient = gradient;
+		}
+		private void OnDestroy()
+		{
+			Instance = null;
 		}
 	}
 }
