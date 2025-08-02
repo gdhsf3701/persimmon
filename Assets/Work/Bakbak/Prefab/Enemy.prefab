@@ -48,11 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39741e6b44b6604ea4b5b94614e0646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <PlayerFinder>k__BackingField: {fileID: 11400000, guid: 96e9144998e0438409592706cfc58333, type: 2}
+  <ComboFinder>k__BackingField: {fileID: 11400000, guid: 5c61bea77fdf9924695a20406f556707, type: 2}
   enemyAnimator: {fileID: 1647996686685780943}
+  enemyMover: {fileID: 3933764431249144588}
   reward: 10
-  finder: {fileID: 11400000, guid: 5c61bea77fdf9924695a20406f556707, type: 2}
   particle: {fileID: 2715066139428718272, guid: 470bfbe7faa090f4cbe908729264a9a1, type: 3}
+  attackCoolTime: 1
   indicater: {fileID: 1323739913196398299, guid: fde75a307dd346a4bbbf7bc80d2ffbe8, type: 3}
+  isAttacking: 0
+  target: {fileID: 0}
 --- !u!114 &5003976635068138324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  distanceToAttack: 1
   dieUpSpeed: 1.25
 --- !u!1 &6030536804349653866
 GameObject:

@@ -13,6 +13,7 @@ namespace moon._01.Script.Manager
         [SerializeField] private int many;
         [SerializeField] private float spawnTime;
         [SerializeField] private FadeScreenManager fadeScreenManager;
+        [SerializeField] private bool isUpSpawn = false;
         private List<GameObject> _enemyPrefabs = new List<GameObject>();
         
         private float _timer = 0;
@@ -95,7 +96,15 @@ namespace moon._01.Script.Manager
         {
             int rand = Random.Range(0, many);
             int enemyRand = Random.Range(0, _enemyPrefabs.Count);
-            Enemy obj = Instantiate(_enemyPrefabs[enemyRand] , IntToPos(rand) ,Quaternion.identity).GetComponent<Enemy>();
+            Enemy obj;
+            if (!isUpSpawn)
+            {
+                obj = Instantiate(_enemyPrefabs[enemyRand], IntToPos(rand), Quaternion.identity).GetComponent<Enemy>();
+            }
+            else
+            {
+                obj = Instantiate(_enemyPrefabs[enemyRand], Vector2.up * distance, Quaternion.identity).GetComponent<Enemy>();
+            }
             obj.Spawned();
             _enemyCount++;
             _actionEnemy.Add(obj);
@@ -125,10 +134,18 @@ namespace moon._01.Script.Manager
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            for (int i = 0; i < many; i++)
+            if (!isUpSpawn)
             {
-                float angle = i * Mathf.PI * 2 / many;
-                Vector3 pos = transform.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * distance;
+                for (int i = 0; i < many; i++)
+                {
+                    float angle = i * Mathf.PI * 2 / many;
+                    Vector3 pos = transform.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * distance;
+                    Gizmos.DrawWireSphere(pos, 0.5f);
+                }
+            }
+            else
+            {
+                Vector3 pos = Vector2.up * distance;
                 Gizmos.DrawWireSphere(pos, 0.5f);
             }
         }
