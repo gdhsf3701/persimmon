@@ -972,6 +972,7 @@ MonoBehaviour:
   _fadeImage: {fileID: 1073166516}
   cirle: {fileID: 1879724392}
   _fadeDuration: 0.5
+  isTutorial: 0
 --- !u!114 &1073166516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6440,7 +6441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f976e333764d268feb21bbd2ba8e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundName: ButonSFX
+  soundName: ButtonSFX
 --- !u!114 &1833858743 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6101385432381286580, guid: 2ab4e0a4ce674ab40896734847872024, type: 3}

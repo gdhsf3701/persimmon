@@ -1143,6 +1143,7 @@ MonoBehaviour:
   _fadeImage: {fileID: 1073166516}
   cirle: {fileID: 1879724392}
   _fadeDuration: 0.5
+  isTutorial: 0
 --- !u!114 &1073166516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6717,6 +6718,10 @@ PrefabInstance:
     - target: {fileID: 4474700356445739413, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
       propertyPath: distance
       value: 14.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474700356445739413, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
+      propertyPath: is2Stage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4474700356445739413, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
       propertyPath: spawnTime
