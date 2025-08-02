@@ -6,6 +6,7 @@ using moon._01.Script.Manager;
 using Plugins.ScriptFinder.RunTime.Finder;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace moon._01.Script.Tutorial
 {
@@ -42,7 +43,7 @@ namespace moon._01.Script.Tutorial
         [SerializeField] private ScriptFinderSO gameManagerFinder;
         [SerializeField] private TextMeshProUGUI text;
 
-        public Action TutorialCompleted;
+        public UnityEvent TutorialCompleted;
 
         private int _index = 0;
         private bool _enemyDied = true;
