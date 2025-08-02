@@ -17,7 +17,7 @@ namespace moon._01.Script.Manager
         [SerializeField] private bool isSildeSpawn = false;
         [SerializeField] private bool isTutorial;
         private bool isSpawnedBoss = false;
-        private bool is2Stage = false;
+        [SerializeField]private bool is2Stage = false;
         private List<GameObject> _enemyPrefabs = new List<GameObject>();
         
         private float _timer = 0;
