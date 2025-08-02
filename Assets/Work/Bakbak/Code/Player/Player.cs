@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         if(died )
         {
             Death();
-            SoundManager.Instance.PlaySound("OverBGM");
+            //SoundManager.Instance.PlaySound("OverBGM");
         }
     }
 

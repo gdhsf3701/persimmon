@@ -4,6 +4,6 @@ public class PlayerAnimatorTrigger : MonoBehaviour
 {
     public void EndDieAnimation()
     {
-        Padeinout._instance.PadeIn("Setting");
+        Padeinout._instance.PadeIn("Fail");
     }
 }
