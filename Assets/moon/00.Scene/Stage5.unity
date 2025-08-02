@@ -6226,6 +6226,10 @@ PrefabInstance:
       value: Stage5System
       objectReference: {fileID: 0}
     - target: {fileID: 8966542119937264657, guid: 10df0827e30c2ab4e80427d50f686371, type: 3}
+      propertyPath: distance
+      value: 8.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966542119937264657, guid: 10df0827e30c2ab4e80427d50f686371, type: 3}
       propertyPath: fadeScreenManager
       value: 
       objectReference: {fileID: 1073166515}
