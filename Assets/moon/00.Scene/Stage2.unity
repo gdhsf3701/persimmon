@@ -6931,6 +6931,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2199305947475658928, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
+      propertyPath: nextScene
+      value: Stage3
+      objectReference: {fileID: 0}
     - target: {fileID: 3898172044031433369, guid: c493c0182fcd18e4da242bc5410644a2, type: 3}
       propertyPath: m_Name
       value: Stage2System

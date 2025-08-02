@@ -583,6 +583,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2199305947475658928, guid: d0e73b84403b06e4983b4e6542362065, type: 3}
+      propertyPath: nextScene
+      value: Stage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199305947475658928, guid: d0e73b84403b06e4983b4e6542362065, type: 3}
       propertyPath: <CutSceneMany>k__BackingField
       value: 4
       objectReference: {fileID: 0}

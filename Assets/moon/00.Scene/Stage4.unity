@@ -255,6 +255,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
+      propertyPath: many
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
+      propertyPath: distance
+      value: 18.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093419210223642594, guid: 8a9502110e8044a44b171e6f8070a853, type: 3}
       propertyPath: fadeScreenManager
       value: 
       objectReference: {fileID: 1073166515}
@@ -766,7 +774,7 @@ Transform:
   m_GameObject: {fileID: 443551706}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.182802, y: -1.1863751, z: -9.890129}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1581,7 +1589,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
