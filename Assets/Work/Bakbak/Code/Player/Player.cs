@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private string newclip;
     public void Hit()
     {
+        SoundManager.Instance.PlaySound("PlayerHitSFX");
         bool died = finderSO.GetTarget<HeartCounter>().Damage();
         if(died )
         {
