@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1174ab5ca36def44d829c644d34fd815, type: 2}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: <CutSceneMany>k__BackingField
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7258987437023022847, guid: 15db420e83dbcda44b7734ad5c65cef5, type: 3}
       propertyPath: <BossEnemy>k__BackingField.Array.size
