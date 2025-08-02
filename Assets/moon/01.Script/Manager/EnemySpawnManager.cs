@@ -93,11 +93,11 @@ namespace moon._01.Script.Manager
 
             if (is2Stage)
             {
-                _Alltimer += Time.deltaTime/0.8f;
+                _Alltimer += Time.deltaTime/3f;
             }
             else
             {
-                _Alltimer += Time.deltaTime/1f;
+                _Alltimer += Time.deltaTime/2f;
             }
             _timer += Time.deltaTime;
             if (SpawnCount > 0 && _timer >= spawnTime)
