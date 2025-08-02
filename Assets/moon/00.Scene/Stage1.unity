@@ -404,6 +404,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 532244786054613342, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
+      propertyPath: m_Color.a
+      value: 0.68235296
+      objectReference: {fileID: 0}
     - target: {fileID: 805395895877504407, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -552,14 +556,6 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1637916147}
-    - target: {fileID: 6422633107020665719, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437461498679390504, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7216921517391970525, guid: cfa885eebf8404e4ba8cc93119311dc9, type: 3}
       propertyPath: m_Name
       value: ScoreUI

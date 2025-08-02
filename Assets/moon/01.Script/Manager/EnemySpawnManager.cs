@@ -14,6 +14,8 @@ namespace moon._01.Script.Manager
         [SerializeField] private float spawnTime;
         [SerializeField] private FadeScreenManager fadeScreenManager;
         [SerializeField] private bool isUpSpawn = false;
+        [SerializeField] private bool isSildeSpawn = false;
+        private bool isSpawnedBoss = false;
         private List<GameObject> _enemyPrefabs = new List<GameObject>();
         
         private float _timer = 0;
@@ -49,7 +51,12 @@ namespace moon._01.Script.Manager
             }
             else
             {
-                _Alltimer -= 10;
+                _Alltimer -= 3;
+            }
+
+            if (isBoolWave)
+            {
+                isSpawnedBoss = true;
             }
         }
 
@@ -82,7 +89,7 @@ namespace moon._01.Script.Manager
         private void Update()
         {
             
-            _Alltimer += Time.deltaTime/1.5f;
+            _Alltimer += Time.deltaTime/1f;
             _timer += Time.deltaTime;
             if (SpawnCount > 0 && _timer >= spawnTime)
             {
@@ -97,13 +104,23 @@ namespace moon._01.Script.Manager
             int rand = Random.Range(0, many);
             int enemyRand = Random.Range(0, _enemyPrefabs.Count);
             Enemy obj;
+            Debug.Log(isUpSpawn);
+            Debug.Log(isSpawnedBoss);
             if (!isUpSpawn)
             {
                 obj = Instantiate(_enemyPrefabs[enemyRand], IntToPos(rand), Quaternion.identity).GetComponent<Enemy>();
+            }else if (isSildeSpawn && isSpawnedBoss)
+            {
+                obj = Instantiate(_enemyPrefabs[enemyRand], Vector2.right * distance, Quaternion.identity).GetComponent<Enemy>();
+                Debug.Log("isSildeSpawn");
+            }
+            else if(isUpSpawn)
+            {
+                obj = Instantiate(_enemyPrefabs[enemyRand], Vector2.up * distance, Quaternion.identity).GetComponent<Enemy>();
             }
             else
             {
-                obj = Instantiate(_enemyPrefabs[enemyRand], Vector2.up * distance, Quaternion.identity).GetComponent<Enemy>();
+                obj = Instantiate(_enemyPrefabs[enemyRand], IntToPos(rand), Quaternion.identity).GetComponent<Enemy>();
             }
             obj.Spawned();
             _enemyCount++;

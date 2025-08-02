@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: SoundListSO
   m_EditorClassIdentifier: 
   Sounds:
-  - {fileID: 11400000, guid: 14ef97a388768384b9bbb75389637feb, type: 2}
-  - {fileID: 11400000, guid: 82453bd91bbbdc3439515310fa4ea48d, type: 2}
-  - {fileID: 11400000, guid: 1b03b93bbc2d55d4c8ef161a35cbec8d, type: 2}
-  - {fileID: 11400000, guid: 396cdad91e291114c8a8dfb9f09de2ae, type: 2}
-  - {fileID: 11400000, guid: 5920e6d1345598f488e19ac33834b08d, type: 2}
-  - {fileID: 11400000, guid: c8dc7751d0b5c254ea64a309d01653b4, type: 2}
-  - {fileID: 11400000, guid: e36781c8a9769b84e9686fcedf0aa0b5, type: 2}
-  - {fileID: 11400000, guid: 1247d3c3e2b508941be3b3bb016d3b0b, type: 2}
-  - {fileID: 11400000, guid: 12bce7c350bd48042a6c46d9852b5e6b, type: 2}
+  - {fileID: 11400000, guid: 30a31e14b590c3b449864dce785764ac, type: 2}
+  - {fileID: 11400000, guid: 4d5a6fa8c4fdf7c47b0b320590165b37, type: 2}
+  - {fileID: 11400000, guid: 8b3d478ec2c972849b6bd5a33416c866, type: 2}
+  - {fileID: 11400000, guid: 87a9cf4a8d024764286a3d93d673582e, type: 2}
+  - {fileID: 11400000, guid: ce2f2cb1e6212d94cbb3235878850534, type: 2}
+  - {fileID: 11400000, guid: e68bd45227a1dca4cbb4c25b892fa81e, type: 2}
+  - {fileID: 11400000, guid: afdbd5ca8ea245d4bae06458d8977096, type: 2}
+  - {fileID: 11400000, guid: 8f9abca06fca3a146a2182a27a979da6, type: 2}
+  - {fileID: 11400000, guid: 44c950eeec1f7834c9b0122b843aae2f, type: 2}
+  - {fileID: 11400000, guid: 2e6f193f540e8f649bf97ec8dcd9c6cd, type: 2}
+  - {fileID: 11400000, guid: c162d5b54b3427d4393ba56e7988d7a5, type: 2}
+  - {fileID: 11400000, guid: a9496438b37520041978a13b50c6deed, type: 2}
+  - {fileID: 11400000, guid: bf22efb66a7be4c478f05b6d658908f9, type: 2}
