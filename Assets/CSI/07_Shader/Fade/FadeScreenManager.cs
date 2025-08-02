@@ -12,11 +12,15 @@ namespace CSI._07_Shader.Fade
         [SerializeField] private Transform cirle;
         [SerializeField] private float _fadeDuration = 0.5f;
         private readonly int _valueHash = Shader.PropertyToID("_Value");
+        [SerializeField] private bool isTutorial;
 
         private void Awake()
         {
-            _fadeImage.material = new Material(_fadeImage.material);
-            SetFade(2.5f);
+            if (!isTutorial)
+            {
+                _fadeImage.material = new Material(_fadeImage.material);
+                SetFade(2.5f);
+            }
         }
 
         // IEnumerator Start()
