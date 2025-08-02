@@ -104,8 +104,6 @@ namespace moon._01.Script.Manager
             int rand = Random.Range(0, many);
             int enemyRand = Random.Range(0, _enemyPrefabs.Count);
             Enemy obj;
-            Debug.Log(isUpSpawn);
-            Debug.Log(isSpawnedBoss);
             if (!isUpSpawn)
             {
                 obj = Instantiate(_enemyPrefabs[enemyRand], IntToPos(rand), Quaternion.identity).GetComponent<Enemy>();
