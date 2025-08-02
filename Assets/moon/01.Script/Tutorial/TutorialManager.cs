@@ -108,6 +108,8 @@ namespace moon._01.Script.Tutorial
             enemy.OnDeadEvent += OnEnemyDie;
 
             await Task.Delay((int)(obj.EnemyStopTime * 1000));
+            if(enemy == null)
+                return;
             enemy.GetComponentInChildren<EnemyMover>().SetTargetPos(enemy.transform.position);
         }
 
