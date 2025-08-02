@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using UnityEngine.Events;
 using Work.Bakbak.Code.Shape;
@@ -12,6 +13,7 @@ public class EnemyHealth : MonoBehaviour, IEntityCompo
     private List<ShapType> hearts;
     public void ApplyDamage(ShapType shape)
     {
+        SoundManager.Instance.PlaySound("HitSFX");
         if(owner.IsDead)
             return;
         if(shape == hearts[0])
